@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Sort} from "@angular/material";
+import {Router} from "@angular/router";
 
 export interface Dessert {
   calories: number;
@@ -18,7 +19,8 @@ export interface Dessert {
 
 export class UserListComponent implements OnInit {
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService,
+              private router: Router) {
     this.sortedData = this.desserts.slice();
   }
 
@@ -27,6 +29,11 @@ export class UserListComponent implements OnInit {
     // this.carService.getAll().subscribe(data => {
     //   this.cars = data;
     // });
+  }
+
+  onEditClick(user: Dessert) {
+    // todo przekierowywanie z id lub z z danymi z formatki
+    this.router.navigate(['/user-edit']);
   }
 
   desserts: Dessert[] = [
