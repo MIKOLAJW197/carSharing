@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {UserComponent} from "./user/user.component";
 import {UserAddComponent} from "./user/user-add/user-add.component";
+import {UserEditComponent} from "./user/user-edit/user-edit.component";
+import {CarComponent} from "./car/car.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -13,6 +15,14 @@ const routes: Routes = [
   {
     path: 'user-add',
     component: UserAddComponent
+  },
+  {
+    path: 'user-edit',
+    component: UserEditComponent
+  },
+  {
+    path: 'cars',
+    component: CarComponent
   }
 ];
 
