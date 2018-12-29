@@ -56,6 +56,10 @@ import { WorkerComponent } from './worker/worker.component';
 import { WorkerAddComponent } from './worker/worker-add/worker-add.component';
 import { WorkerEditComponent } from './worker/worker-edit/worker-edit.component';
 import { WorkerListComponent } from './worker/worker-list/worker-list.component';
+import { RefuelComponent } from './refuel/refuel.component';
+import { RefuelAddComponent } from './refuel/refuel-add/refuel-add.component';
+import { RefuelEditComponent } from './refuel/refuel-edit/refuel-edit.component';
+import { RefuelListComponent } from './refuel/refuel-list/refuel-list.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +103,11 @@ import { WorkerListComponent } from './worker/worker-list/worker-list.component'
     WorkerComponent,
     WorkerAddComponent,
     WorkerEditComponent,
-    WorkerListComponent
+    WorkerListComponent,
+    RefuelComponent,
+    RefuelAddComponent,
+    RefuelEditComponent,
+    RefuelListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Cars Refuel List
+    <button mat-fab color="primary" [routerLink]="['/refuel-add']">+</button>
+  </mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="ID">ID</th>
+      <th mat-sort-header="company">Siec Stacji</th>
+      <th mat-sort-header="amount">Litry</th>
+      <th mat-sort-header="price">Kwota</th>
+      <th mat-sort-header="dateStart">Data</th>
+      <th mat-sort-header="mail">Uzytkownik</th>
+      <th mat-sort-header="car">Samochod</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let refuel of sortedData" (click)="onEditClick(refuel)">
+      <td>{{refuel.id}}</td>
+      <td>{{refuel.siecStacji}}</td>
+      <td>{{refuel.ileLitrow}}</td>
+      <td>{{refuel.kwota}}</td>
+      <td>{{refuel.przejazdDataRozpoczecia}}</td>
+      <td>{{refuel.przejazdUzytkownikMail}}</td>
+      <td>{{refuel.przejazdNrRejestracyjny}}</td>
+    </tr>
+  </table>
+</mat-card>
+

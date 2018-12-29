@@ -50,4 +50,8 @@ export class ApiService {
   getAllWorkers(): Observable<any> {
     return this.http.get(this.endpoint + 'pracownik');
   }
+
+  getAllRefuel(): Observable<any> {
+    return this.http.get(this.endpoint + 'tankowanie');
+  }
 }

@@ -30,6 +30,9 @@ import {WorkEditComponent} from "./work/work-edit/work-edit.component";
 import {WorkerComponent} from "./worker/worker.component";
 import {WorkerAddComponent} from "./worker/worker-add/worker-add.component";
 import {WorkerEditComponent} from "./worker/worker-edit/worker-edit.component";
+import {RefuelComponent} from "./refuel/refuel.component";
+import {RefuelAddComponent} from "./refuel/refuel-add/refuel-add.component";
+import {RefuelEditComponent} from "./refuel/refuel-edit/refuel-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -140,7 +143,8 @@ const routes: Routes = [
   {
     path: 'tech-edit',
     component: WorkEditComponent
-  },{
+  },
+  {
     path: 'workers',
     component: WorkerComponent
   },
@@ -151,6 +155,18 @@ const routes: Routes = [
   {
     path: 'workers-edit',
     component: WorkerEditComponent
+  },
+  {
+    path: 'refuel',
+    component: RefuelComponent
+  },
+  {
+    path: 'refuel-add',
+    component: RefuelAddComponent
+  },
+  {
+    path: 'refuel-edit',
+    component: RefuelEditComponent
   },
 
 ];
