@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
-import {Dessert} from "../../user/user-list/user-list.component";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 
@@ -35,7 +34,7 @@ export class CarListComponent implements OnInit {
     });
   }
 
-  onEditClick(user: Dessert) {
+  onEditClick(car: Car) {
     // todo przekierowywanie z id lub z z danymi z formatki
     this.router.navigate(['/car-edit']);
   }
