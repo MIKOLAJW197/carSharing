@@ -1,3 +1,27 @@
-<p>
-  car-list works!
-</p>
+<mat-card>
+  <mat-card-title>Cars List <button mat-fab color="primary" [routerLink]="['/car-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="NrRejestracyjny">NrRejestracyjny</th>
+      <th mat-sort-header="dostepny">Wolny</th>
+      <th mat-sort-header="model">Model</th>
+      <th mat-sort-header="marka">Marka</th>
+      <th mat-sort-header="przebieg">Przebieg</th>
+      <th mat-sort-header="lokalizacja">Lokalizacja</th>
+      <th mat-sort-header="baza">Baza</th>
+      <th mat-sort-header="parking">Parking</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let car of sortedData" (click)="onEditClick(car)">
+      <td>{{car.nrRejestracyjny}}</td>
+      <td><mat-icon color="primary" [innerHTML]="car.dostepny ? 'done' : 'clear'"></mat-icon></td>
+      <td>{{car.model}}</td>
+      <td>{{car.marka}}</td>
+      <td>{{car.przebieg}}</td>
+      <td>{{car.lokalizacjaPozaP}}</td>
+      <td>{{car.bazaLokalizacja}}</td>
+      <td>{{car.parkingLokalizacja}}</td>
+    </tr>
+  </table>
+</mat-card>
+
