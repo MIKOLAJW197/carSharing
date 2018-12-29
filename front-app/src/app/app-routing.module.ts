@@ -24,6 +24,9 @@ import {CollisionEditComponent} from "./collision/collision-edit/collision-edit.
 import {ParkingComponent} from "./parking/parking.component";
 import {ParkingAddComponent} from "./parking/parking-add/parking-add.component";
 import {ParkingEditComponent} from "./parking/parking-edit/parking-edit.component";
+import {WorkComponent} from "./work/work.component";
+import {WorkAddComponent} from "./work/work-add/work-add.component";
+import {WorkEditComponent} from "./work/work-edit/work-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -122,6 +125,18 @@ const routes: Routes = [
   {
     path: 'parking-edit',
     component: ParkingEditComponent
+  },
+  {
+    path: 'tech',
+    component: WorkComponent
+  },
+  {
+    path: 'tech-add',
+    component: WorkAddComponent
+  },
+  {
+    path: 'tech-edit',
+    component: WorkEditComponent
   },
 
 ];

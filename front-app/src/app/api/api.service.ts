@@ -42,4 +42,8 @@ export class ApiService {
   getAllParkings(): Observable<any> {
     return this.http.get(this.endpoint + 'parking');
   }
+
+  getAllTechnicalWorks(): Observable<any> {
+    return this.http.get(this.endpoint + 'pracer_techniczne');
+  }
 }

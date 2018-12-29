@@ -48,6 +48,10 @@ import { ParkingComponent } from './parking/parking.component';
 import { ParkingListComponent } from './parking/parking-list/parking-list.component';
 import { ParkingAddComponent } from './parking/parking-add/parking-add.component';
 import { ParkingEditComponent } from './parking/parking-edit/parking-edit.component';
+import { WorkComponent } from './work/work.component';
+import { WorkAddComponent } from './work/work-add/work-add.component';
+import { WorkListComponent } from './work/work-list/work-list.component';
+import { WorkEditComponent } from './work/work-edit/work-edit.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +87,11 @@ import { ParkingEditComponent } from './parking/parking-edit/parking-edit.compon
     ParkingComponent,
     ParkingListComponent,
     ParkingAddComponent,
-    ParkingEditComponent
+    ParkingEditComponent,
+    WorkComponent,
+    WorkAddComponent,
+    WorkListComponent,
+    WorkEditComponent
   ],
   imports: [
     BrowserModule,

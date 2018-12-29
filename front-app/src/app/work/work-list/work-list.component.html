@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>Technical Work List <button mat-fab color="primary" [routerLink]="['/tech-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="ID">ID</th>
+      <th mat-sort-header="work">Prace</th>
+      <th mat-sort-header="dateStart">Data rozpoczecia</th>
+      <th mat-sort-header="dateStop">Data zakonczenia</th>
+      <th mat-sort-header="base">Baza</th>
+      <th mat-sort-header="car">Samochod</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let work of sortedData" (click)="onEditClick(work)">
+      <td>{{work.id}}</td>
+      <td>{{work.coRobione}}</td>
+      <td>{{work.odKiedy}}</td>
+      <td>{{work.doKiedy}}</td>
+      <td>{{work.bazaLokalizacja}}</td>
+      <td>{{work.samochodNrRejestracyjny}}</td>
+    </tr>
+  </table>
+</mat-card>
+
