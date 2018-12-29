@@ -9,6 +9,9 @@ import {CarAddComponent} from "./car/car-add/car-add.component";
 import {CarEditComponent} from "./car/car-edit/car-edit.component";
 import {RideAddComponent} from "./ride/ride-add/ride-add.component";
 import {RideEditComponent} from "./ride/ride-edit/ride-edit.component";
+import {BaseComponent} from "./base/base.component";
+import {BaseAddComponent} from "./base/base-add/base-add.component";
+import {BaseEditComponent} from "./base/base-edit/base-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -47,6 +50,18 @@ const routes: Routes = [
   {
     path: 'ride-edit',
     component: RideEditComponent
+  },
+  {
+    path: 'base',
+    component: BaseComponent
+  },
+  {
+    path: 'base-add',
+    component: BaseAddComponent
+  },
+  {
+    path: 'base-edit',
+    component: BaseEditComponent
   },
 
 ];

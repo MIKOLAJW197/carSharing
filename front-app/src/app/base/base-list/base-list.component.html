@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Bases List <button mat-fab color="primary" [routerLink]="['/base-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="name">Nazwa Lokalizacji</th>
+      <th mat-sort-header="count">Liczba Miejsc</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let base of sortedData" (click)="onEditClick(base)">
+      <td>{{base.lokalizacja}}</td>
+      <td>{{base.liczbaMiejsc}}</td>
+    </tr>
+  </table>
+</mat-card>
+

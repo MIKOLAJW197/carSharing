@@ -28,6 +28,10 @@ import {RideComponent} from './ride/ride.component';
 import { RideListComponent } from './ride/ride-list/ride-list.component';
 import { RideEditComponent } from './ride/ride-edit/ride-edit.component';
 import { RideAddComponent } from './ride/ride-add/ride-add.component';
+import { BaseComponent } from './base/base.component';
+import { BaseListComponent } from './base/base-list/base-list.component';
+import { BaseAddComponent } from './base/base-add/base-add.component';
+import { BaseEditComponent } from './base/base-edit/base-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { RideAddComponent } from './ride/ride-add/ride-add.component';
     RideComponent,
     RideListComponent,
     RideEditComponent,
-    RideAddComponent
+    RideAddComponent,
+    BaseComponent,
+    BaseListComponent,
+    BaseAddComponent,
+    BaseEditComponent
   ],
   imports: [
     BrowserModule,

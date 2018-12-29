@@ -22,4 +22,8 @@ export class ApiService {
   getAllRides(): Observable<any> {
     return this.http.get(this.endpoint + 'przejazd');
   }
+
+  getAllBases(): Observable<any> {
+    return this.http.get(this.endpoint + 'baza');
+  }
 }
