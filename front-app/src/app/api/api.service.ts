@@ -18,4 +18,8 @@ export class ApiService {
   getAllUsers(): Observable<any> {
     return this.http.get(this.endpoint + 'uzytkownik');
   }
+
+  getAllRides(): Observable<any> {
+    return this.http.get(this.endpoint + 'przejazd');
+  }
 }

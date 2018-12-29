@@ -25,6 +25,9 @@ import {CarListComponent} from './car/car-list/car-list.component';
 import {CarAddComponent} from './car/car-add/car-add.component';
 import {CarEditComponent} from './car/car-edit/car-edit.component';
 import {RideComponent} from './ride/ride.component';
+import { RideListComponent } from './ride/ride-list/ride-list.component';
+import { RideEditComponent } from './ride/ride-edit/ride-edit.component';
+import { RideAddComponent } from './ride/ride-add/ride-add.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {RideComponent} from './ride/ride.component';
     CarListComponent,
     CarAddComponent,
     CarEditComponent,
-    RideComponent
+    RideComponent,
+    RideListComponent,
+    RideEditComponent,
+    RideAddComponent
   ],
   imports: [
     BrowserModule,

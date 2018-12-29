@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Rides List <button mat-fab color="primary" [routerLink]="['/ride-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="dataStart">Data Rozpoczecia</th>
+      <th mat-sort-header="dataStop">Data Zakonczenia</th>
+      <th mat-sort-header="dystans">Przebyty dystans</th>
+      <th mat-sort-header="lokStart">Lokalizacja Poczatkowa</th>
+      <th mat-sort-header="lokStop">Lokalizacaj Koncowa</th>
+      <th mat-sort-header="mail">Uzytkownik</th>
+      <th mat-sort-header="cennik">Cennik z dnia</th>
+      <th mat-sort-header="samochod">Samochod (nr rejestracyjny)</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let ride of sortedData" (click)="onEditClick(ride)">
+      <td>{{ride.dataRozpoczecia}}</td>
+      <td>{{ride.dataZakonczenia}}</td>
+      <td>{{ride.dystans}}</td>
+      <td>{{ride.lokalizacjaPoczatkowa}}</td>
+      <td>{{ride.lokalizacjaKoncowa}}</td>
+      <td>{{ride.uzytkownikMail}}</td>
+      <td>{{ride.cennikOdKiedy}}</td>
+      <td>{{ride.samochodNrRejestracyjny}}</td>
+    </tr>
+  </table>
+</mat-card>
+
