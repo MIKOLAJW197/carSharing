@@ -26,4 +26,8 @@ export class ApiService {
   getAllBases(): Observable<any> {
     return this.http.get(this.endpoint + 'baza');
   }
+
+  getAllTariffs(): Observable<any> {
+    return this.http.get(this.endpoint + 'cennik');
+  }
 }

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
-import {Ride} from "../../ride/ride-list/ride-list.component";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 

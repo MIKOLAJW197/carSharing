@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Tariffs List <button mat-fab color="primary" [routerLink]="['/tariff-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="dateStart">Data rozpoczecia obowiazywania</th>
+      <th mat-sort-header="dateStop">Data zakonczenia obowiazywania</th>
+      <th mat-sort-header="priceDist">Cena za kilometr</th>
+      <th mat-sort-header="priceTime">Cena za minute</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let tariff of sortedData" (click)="onEditClick(tariff)">
+      <td>{{tariff.odKiedy}}</td>
+      <td>{{tariff.doKiedy}}</td>
+      <td>{{tariff.cenaKilometra}}</td>
+      <td>{{tariff.cenaMinuty}}</td>
+    </tr>
+  </table>
+</mat-card>
+

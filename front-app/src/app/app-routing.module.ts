@@ -12,6 +12,9 @@ import {RideEditComponent} from "./ride/ride-edit/ride-edit.component";
 import {BaseComponent} from "./base/base.component";
 import {BaseAddComponent} from "./base/base-add/base-add.component";
 import {BaseEditComponent} from "./base/base-edit/base-edit.component";
+import {TariffComponent} from "./tariff/tariff.component";
+import {TariffAddComponent} from "./tariff/tariff-add/tariff-add.component";
+import {TariffEditComponent} from "./tariff/tariff-edit/tariff-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -62,6 +65,18 @@ const routes: Routes = [
   {
     path: 'base-edit',
     component: BaseEditComponent
+  },
+  {
+    path: 'tariff',
+    component: TariffComponent
+  },
+  {
+    path: 'tariff-add',
+    component: TariffAddComponent
+  },
+  {
+    path: 'tariff-edit',
+    component: TariffEditComponent
   },
 
 ];

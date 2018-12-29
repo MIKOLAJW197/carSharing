@@ -32,6 +32,10 @@ import { BaseComponent } from './base/base.component';
 import { BaseListComponent } from './base/base-list/base-list.component';
 import { BaseAddComponent } from './base/base-add/base-add.component';
 import { BaseEditComponent } from './base/base-edit/base-edit.component';
+import { TariffComponent } from './tariff/tariff.component';
+import { TariffListComponent } from './tariff/tariff-list/tariff-list.component';
+import { TariffEditComponent } from './tariff/tariff-edit/tariff-edit.component';
+import { TariffAddComponent } from './tariff/tariff-add/tariff-add.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { BaseEditComponent } from './base/base-edit/base-edit.component';
     BaseComponent,
     BaseListComponent,
     BaseAddComponent,
-    BaseEditComponent
+    BaseEditComponent,
+    TariffComponent,
+    TariffListComponent,
+    TariffEditComponent,
+    TariffAddComponent
   ],
   imports: [
     BrowserModule,
