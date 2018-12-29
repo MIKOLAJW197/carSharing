@@ -1,0 +1,1613 @@
+{
+  "config" : {
+    "speedmentVersion" : "Speedment:3.1.9",
+    "nameProtected" : false,
+    "jsonp" : false,
+    "companyName" : "company",
+    "packageLocation" : "src/main/java/",
+    "dbmses" : [
+      {
+        "nameProtected" : true,
+        "expanded" : true,
+        "port" : 3306,
+        "schemas" : [
+          {
+            "nameProtected" : true,
+            "tables" : [
+              {
+                "nameProtected" : true,
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "lokalizacja",
+                    "id" : "lokalizacja",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "liczba_miejsc",
+                    "id" : "liczba_miejsc",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "lokalizacja",
+                    "id" : "lokalizacja",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "lokalizacja",
+                        "id" : "lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "baza",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "baza",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "od_kiedy",
+                    "id" : "od_kiedy",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "do_kiedy",
+                    "id" : "do_kiedy",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "cena_kilometra",
+                    "id" : "cena_kilometra",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "cena_minuty",
+                    "id" : "cena_minuty",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "od_kiedy",
+                    "id" : "od_kiedy",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "od_kiedy",
+                        "id" : "od_kiedy",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "cennik",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "cennik",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "uzytkownik_mail",
+                        "foreignColumnName" : "mail",
+                        "id" : "uzytkownik_mail",
+                        "foreignTableName" : "uzytkownik",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "doladowanie_konta_uzytkownik_fk",
+                    "id" : "doladowanie_konta_uzytkownik_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "data",
+                    "id" : "data",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "kwota",
+                    "id" : "kwota",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "sposob_platnosci",
+                    "id" : "sposob_platnosci",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "uzytkownik_mail",
+                    "id" : "uzytkownik_mail",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "uzytkownik_mail",
+                    "id" : "uzytkownik_mail",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "uzytkownik_mail",
+                        "id" : "uzytkownik_mail",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "doladowanie_konta",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "doladowanie_konta",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "pracownik_pesel",
+                        "foreignColumnName" : "pesel",
+                        "id" : "pracownik_pesel",
+                        "foreignTableName" : "pracownik",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "pracownik_lokalizacja",
+                        "foreignColumnName" : "baza_lokalizacja",
+                        "id" : "pracownik_lokalizacja",
+                        "foreignTableName" : "pracownik",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "name" : "kolizja_pracownik_fk",
+                    "id" : "kolizja_pracownik_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_uzytkownik_mail",
+                        "foreignColumnName" : "uzytkownik_mail",
+                        "id" : "przejazd_uzytkownik_mail",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_data_rozpoczecia",
+                        "foreignColumnName" : "data_rozpoczecia",
+                        "id" : "przejazd_data_rozpoczecia",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_nr_rejestracyjny",
+                        "foreignColumnName" : "samochod_nr_rejestracyjny",
+                        "id" : "przejazd_nr_rejestracyjny",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "name" : "kolizja_przejazd_fk",
+                    "id" : "kolizja_przejazd_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "lokalizacja",
+                    "id" : "lokalizacja",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "data",
+                    "id" : "data",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przejazd_data_rozpoczecia",
+                    "id" : "przejazd_data_rozpoczecia",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "nameProtected" : true,
+                    "expanded" : true,
+                    "nullable" : false,
+                    "autoIncrement" : false,
+                    "name" : "przejazd_uzytkownik_mail",
+                    "nullableImplementation" : "OPTIONAL",
+                    "id" : "przejazd_uzytkownik_mail",
+                    "ordinalPosition" : 5,
+                    "enabled" : true,
+                    "restVisible" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przejazd_nr_rejestracyjny",
+                    "id" : "przejazd_nr_rejestracyjny",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "pracownik_pesel",
+                    "id" : "pracownik_pesel",
+                    "ordinalPosition" : 7,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "pracownik_lokalizacja",
+                    "id" : "pracownik_lokalizacja",
+                    "ordinalPosition" : 8,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "kolizja__idx",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_data_rozpoczecia",
+                        "id" : "przejazd_data_rozpoczecia",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_nr_rejestracyjny",
+                        "id" : "przejazd_nr_rejestracyjny",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_uzytkownik_mail",
+                        "id" : "przejazd_uzytkownik_mail",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "kolizja__idx",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "id",
+                        "id" : "id",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "kolizja_pracownik_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "pracownik_pesel",
+                        "id" : "pracownik_pesel",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "pracownik_lokalizacja",
+                        "id" : "pracownik_lokalizacja",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "kolizja_pracownik_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "kolizja_przejazd_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_uzytkownik_mail",
+                        "id" : "przejazd_uzytkownik_mail",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_data_rozpoczecia",
+                        "id" : "przejazd_data_rozpoczecia",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_nr_rejestracyjny",
+                        "id" : "przejazd_nr_rejestracyjny",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "kolizja_przejazd_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "kolizja",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "kolizja",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "lokalizacja",
+                    "id" : "lokalizacja",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "liczba_miejsc",
+                    "id" : "liczba_miejsc",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "lokalizacja",
+                    "id" : "lokalizacja",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "lokalizacja",
+                        "id" : "lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "parking",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "parking",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "foreignColumnName" : "lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "foreignTableName" : "baza",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "pracer_techniczne_baza_fk",
+                    "id" : "pracer_techniczne_baza_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "samochod_nr_rejestracyjny",
+                        "foreignColumnName" : "nr_rejestracyjny",
+                        "id" : "samochod_nr_rejestracyjny",
+                        "foreignTableName" : "samochod",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "pracer_techniczne_samochod_fk",
+                    "id" : "pracer_techniczne_samochod_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "co_robione",
+                    "id" : "co_robione",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "od_kiedy",
+                    "id" : "od_kiedy",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "do_kiedy",
+                    "id" : "do_kiedy",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "baza_lokalizacja",
+                    "id" : "baza_lokalizacja",
+                    "ordinalPosition" : 5,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "samochod_nr_rejestracyjny",
+                    "id" : "samochod_nr_rejestracyjny",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "id",
+                        "id" : "id",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "pracer_techniczne_baza_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "pracer_techniczne_baza_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "pracer_techniczne_samochod_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "samochod_nr_rejestracyjny",
+                        "id" : "samochod_nr_rejestracyjny",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "pracer_techniczne_samochod_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "pracer_techniczne",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "pracer_techniczne",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "foreignColumnName" : "lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "foreignTableName" : "baza",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "pracownik_baza_fk",
+                    "id" : "pracownik_baza_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "pesel",
+                    "id" : "pesel",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "imie",
+                    "id" : "imie",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "nazwisko",
+                    "id" : "nazwisko",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "baza_lokalizacja",
+                    "id" : "baza_lokalizacja",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "baza_lokalizacja",
+                    "id" : "baza_lokalizacja",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : true,
+                    "name" : "pesel",
+                    "id" : "pesel",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "pesel",
+                        "id" : "pesel",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "pracownik_baza_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "pracownik_baza_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "pracownik",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "pracownik",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "cennik_od_kiedy",
+                        "foreignColumnName" : "od_kiedy",
+                        "id" : "cennik_od_kiedy",
+                        "foreignTableName" : "cennik",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "przejazd_cennik_fk",
+                    "id" : "przejazd_cennik_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "samochod_nr_rejestracyjny",
+                        "foreignColumnName" : "nr_rejestracyjny",
+                        "id" : "samochod_nr_rejestracyjny",
+                        "foreignTableName" : "samochod",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "przejazd_samochod_fk",
+                    "id" : "przejazd_samochod_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "uzytkownik_mail",
+                        "foreignColumnName" : "mail",
+                        "id" : "uzytkownik_mail",
+                        "foreignTableName" : "uzytkownik",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "przejazd_uzytkownik_fk",
+                    "id" : "przejazd_uzytkownik_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "data_rozpoczecia",
+                    "id" : "data_rozpoczecia",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "data_zakonczenia",
+                    "id" : "data_zakonczenia",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "dytans",
+                    "id" : "dytans",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "lokalizacja_poczatkowa",
+                    "id" : "lokalizacja_poczatkowa",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "lokalizacja_koncowa",
+                    "id" : "lokalizacja_koncowa",
+                    "ordinalPosition" : 5,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "uzytkownik_mail",
+                    "id" : "uzytkownik_mail",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "cennik_od_kiedy",
+                    "id" : "cennik_od_kiedy",
+                    "ordinalPosition" : 7,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "samochod_nr_rejestracyjny",
+                    "id" : "samochod_nr_rejestracyjny",
+                    "ordinalPosition" : 8,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "data_rozpoczecia",
+                    "id" : "data_rozpoczecia",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : true,
+                    "name" : "samochod_nr_rejestracyjny",
+                    "id" : "samochod_nr_rejestracyjny",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : true,
+                    "name" : "uzytkownik_mail",
+                    "id" : "uzytkownik_mail",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "uzytkownik_mail",
+                        "id" : "uzytkownik_mail",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "data_rozpoczecia",
+                        "id" : "data_rozpoczecia",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "samochod_nr_rejestracyjny",
+                        "id" : "samochod_nr_rejestracyjny",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "przejazd_cennik_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "cennik_od_kiedy",
+                        "id" : "cennik_od_kiedy",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "przejazd_cennik_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "przejazd_samochod_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "samochod_nr_rejestracyjny",
+                        "id" : "samochod_nr_rejestracyjny",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "przejazd_samochod_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "przejazd",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "przejazd",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "foreignColumnName" : "lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "foreignTableName" : "baza",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "samochod_baza_fk",
+                    "id" : "samochod_baza_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "parking_lokalizacja",
+                        "foreignColumnName" : "lokalizacja",
+                        "id" : "parking_lokalizacja",
+                        "foreignTableName" : "parking",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "name" : "samochod_parking_fk",
+                    "id" : "samochod_parking_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "nr_rejestracyjny",
+                    "id" : "nr_rejestracyjny",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Boolean",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "dostepny",
+                    "id" : "dostepny",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "model",
+                    "id" : "model",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "marka",
+                    "id" : "marka",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przebieg",
+                    "id" : "przebieg",
+                    "ordinalPosition" : 5,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : true,
+                    "name" : "lokalizacja_poza_p",
+                    "id" : "lokalizacja_poza_p",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : true,
+                    "name" : "baza_lokalizacja",
+                    "id" : "baza_lokalizacja",
+                    "ordinalPosition" : 7,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : true,
+                    "name" : "parking_lokalizacja",
+                    "id" : "parking_lokalizacja",
+                    "ordinalPosition" : 8,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "nr_rejestracyjny",
+                    "id" : "nr_rejestracyjny",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "nr_rejestracyjny",
+                        "id" : "nr_rejestracyjny",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "samochod_baza_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "baza_lokalizacja",
+                        "id" : "baza_lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "samochod_baza_fk",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "samochod_parking_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "parking_lokalizacja",
+                        "id" : "parking_lokalizacja",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "samochod_parking_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "samochod",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "samochod",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "foreignKeys" : [
+                  {
+                    "expanded" : false,
+                    "foreignKeyColumns" : [
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_uzytkownik_mail",
+                        "foreignColumnName" : "uzytkownik_mail",
+                        "id" : "przejazd_uzytkownik_mail",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_data_rozpoczecia",
+                        "foreignColumnName" : "data_rozpoczecia",
+                        "id" : "przejazd_data_rozpoczecia",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "foreignDatabaseName" : "carsharing",
+                        "foreignSchemaName" : "carsharing",
+                        "expanded" : true,
+                        "name" : "przejazd_nr_rejestracyjny",
+                        "foreignColumnName" : "samochod_nr_rejestracyjny",
+                        "id" : "przejazd_nr_rejestracyjny",
+                        "foreignTableName" : "przejazd",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "name" : "tankowanie_przejazd_fk",
+                    "id" : "tankowanie_przejazd_fk",
+                    "enabled" : true
+                  }
+                ],
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "siec_stacji",
+                    "id" : "siec_stacji",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "ile_litrow",
+                    "id" : "ile_litrow",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "kwota",
+                    "id" : "kwota",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.sql.Date",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przejazd_data_rozpoczecia",
+                    "id" : "przejazd_data_rozpoczecia",
+                    "ordinalPosition" : 5,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przejazd_uzytkownik_mail",
+                    "id" : "przejazd_uzytkownik_mail",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "przejazd_nr_rejestracyjny",
+                    "id" : "przejazd_nr_rejestracyjny",
+                    "ordinalPosition" : 7,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "id",
+                    "id" : "id",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "id",
+                        "id" : "id",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  },
+                  {
+                    "expanded" : false,
+                    "unique" : false,
+                    "name" : "tankowanie_przejazd_fk",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_uzytkownik_mail",
+                        "id" : "przejazd_uzytkownik_mail",
+                        "ordinalPosition" : 1
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_data_rozpoczecia",
+                        "id" : "przejazd_data_rozpoczecia",
+                        "ordinalPosition" : 3
+                      },
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "przejazd_nr_rejestracyjny",
+                        "id" : "przejazd_nr_rejestracyjny",
+                        "ordinalPosition" : 2
+                      }
+                    ],
+                    "id" : "tankowanie_przejazd_fk",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "tankowanie",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "tankowanie",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              },
+              {
+                "nameProtected" : true,
+                "isView" : false,
+                "columns" : [
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "mail",
+                    "id" : "mail",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "haslo",
+                    "id" : "haslo",
+                    "ordinalPosition" : 2,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "imie",
+                    "id" : "imie",
+                    "ordinalPosition" : 3,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.String",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "nazwisko",
+                    "id" : "nazwisko",
+                    "ordinalPosition" : 4,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Integer",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "pesel",
+                    "id" : "pesel",
+                    "ordinalPosition" : 5,
+                    "enabled" : true
+                  },
+                  {
+                    "databaseType" : "java.lang.Double",
+                    "typeMapper" : "com.speedment.runtime.typemapper.primitive.PrimitiveTypeMapper",
+                    "expanded" : true,
+                    "nullable" : false,
+                    "name" : "stan_skarbonki",
+                    "id" : "stan_skarbonki",
+                    "ordinalPosition" : 6,
+                    "enabled" : true
+                  }
+                ],
+                "enabled" : true,
+                "restEnableFilters" : true,
+                "expanded" : true,
+                "restEnabled" : true,
+                "primaryKeyColumns" : [
+                  {
+                    "expanded" : true,
+                    "name" : "mail",
+                    "id" : "mail",
+                    "ordinalPosition" : 1,
+                    "enabled" : true
+                  }
+                ],
+                "indexes" : [
+                  {
+                    "expanded" : false,
+                    "unique" : true,
+                    "name" : "PRIMARY",
+                    "indexColumns" : [
+                      {
+                        "orderType" : "ASC",
+                        "expanded" : true,
+                        "name" : "mail",
+                        "id" : "mail",
+                        "ordinalPosition" : 1
+                      }
+                    ],
+                    "id" : "PRIMARY",
+                    "enabled" : true
+                  }
+                ],
+                "name" : "uzytkownik",
+                "restEnableSkipLimit" : true,
+                "restCors" : "*",
+                "id" : "uzytkownik",
+                "restEnableSorters" : true,
+                "restEnableTotal" : false
+              }
+            ],
+            "expanded" : true,
+            "restEnabled" : true,
+            "name" : "carsharing",
+            "restPath" : "",
+            "id" : "carsharing",
+            "enabled" : true
+          }
+        ],
+        "typeName" : "MySQL",
+        "name" : "carsharing",
+        "ipAddress" : "laganowski.com",
+        "id" : "carsharing",
+        "enabled" : true,
+        "username" : "root"
+      }
+    ],
+    "enabled" : true,
+    "expanded" : true,
+    "appId" : "92799304-0389-42b8-8faa-8e536404ada3",
+    "name" : "carsharing",
+    "id" : "carsharing",
+    "jsonpCallbackName" : "callback"
+  }
+}
