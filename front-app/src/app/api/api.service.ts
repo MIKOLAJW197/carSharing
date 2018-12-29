@@ -30,4 +30,8 @@ export class ApiService {
   getAllTariffs(): Observable<any> {
     return this.http.get(this.endpoint + 'cennik');
   }
+
+  getAllTopUps(): Observable<any> {
+    return this.http.get(this.endpoint + 'doladowanie_konta');
+  }
 }

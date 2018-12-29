@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>Top Ups List
+    <button mat-fab color="primary" [routerLink]="['/top-up-add']">+</button>
+  </mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="date">Data</th>
+      <th mat-sort-header="amount">Kwota</th>
+      <th mat-sort-header="type">Sposob doładowania</th>
+      <th mat-sort-header="mail">Mail Uzytkownika</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let topUp of sortedData" (click)="onEditClick(topUp)">
+      <td>{{topUp.data}}</td>
+      <td>{{topUp.kwota}}</td>
+      <td>{{topUp.sposobPlatnosci}}</td>
+      <td>{{topUp.uzytkownikMail}}</td>
+    </tr>
+  </table>
+</mat-card>
+

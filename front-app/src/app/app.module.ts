@@ -36,6 +36,10 @@ import { TariffComponent } from './tariff/tariff.component';
 import { TariffListComponent } from './tariff/tariff-list/tariff-list.component';
 import { TariffEditComponent } from './tariff/tariff-edit/tariff-edit.component';
 import { TariffAddComponent } from './tariff/tariff-add/tariff-add.component';
+import { TopUpComponent } from './top-up/top-up.component';
+import { TopUpListComponent } from './top-up/top-up-list/top-up-list.component';
+import { TopUpAddComponent } from './top-up/top-up-add/top-up-add.component';
+import { TopUpEditComponent } from './top-up/top-up-edit/top-up-edit.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { TariffAddComponent } from './tariff/tariff-add/tariff-add.component';
     TariffComponent,
     TariffListComponent,
     TariffEditComponent,
-    TariffAddComponent
+    TariffAddComponent,
+    TopUpComponent,
+    TopUpListComponent,
+    TopUpAddComponent,
+    TopUpEditComponent
   ],
   imports: [
     BrowserModule,
