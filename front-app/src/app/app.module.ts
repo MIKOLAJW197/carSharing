@@ -52,6 +52,10 @@ import { WorkComponent } from './work/work.component';
 import { WorkAddComponent } from './work/work-add/work-add.component';
 import { WorkListComponent } from './work/work-list/work-list.component';
 import { WorkEditComponent } from './work/work-edit/work-edit.component';
+import { WorkerComponent } from './worker/worker.component';
+import { WorkerAddComponent } from './worker/worker-add/worker-add.component';
+import { WorkerEditComponent } from './worker/worker-edit/worker-edit.component';
+import { WorkerListComponent } from './worker/worker-list/worker-list.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +95,11 @@ import { WorkEditComponent } from './work/work-edit/work-edit.component';
     WorkComponent,
     WorkAddComponent,
     WorkListComponent,
-    WorkEditComponent
+    WorkEditComponent,
+    WorkerComponent,
+    WorkerAddComponent,
+    WorkerEditComponent,
+    WorkerListComponent
   ],
   imports: [
     BrowserModule,

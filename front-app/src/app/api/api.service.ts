@@ -46,4 +46,8 @@ export class ApiService {
   getAllTechnicalWorks(): Observable<any> {
     return this.http.get(this.endpoint + 'pracer_techniczne');
   }
+
+  getAllWorkers(): Observable<any> {
+    return this.http.get(this.endpoint + 'pracownik');
+  }
 }

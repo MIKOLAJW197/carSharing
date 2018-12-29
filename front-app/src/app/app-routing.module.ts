@@ -27,6 +27,9 @@ import {ParkingEditComponent} from "./parking/parking-edit/parking-edit.componen
 import {WorkComponent} from "./work/work.component";
 import {WorkAddComponent} from "./work/work-add/work-add.component";
 import {WorkEditComponent} from "./work/work-edit/work-edit.component";
+import {WorkerComponent} from "./worker/worker.component";
+import {WorkerAddComponent} from "./worker/worker-add/worker-add.component";
+import {WorkerEditComponent} from "./worker/worker-edit/worker-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -137,6 +140,17 @@ const routes: Routes = [
   {
     path: 'tech-edit',
     component: WorkEditComponent
+  },{
+    path: 'workers',
+    component: WorkerComponent
+  },
+  {
+    path: 'workers-add',
+    component: WorkerAddComponent
+  },
+  {
+    path: 'workers-edit',
+    component: WorkerEditComponent
   },
 
 ];
