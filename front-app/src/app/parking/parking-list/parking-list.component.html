@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Parkings List <button mat-fab color="primary" [routerLink]="['/parking-add']">+</button></mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="name">Nazwa Lokalizacji</th>
+      <th mat-sort-header="count">Liczba Miejsc</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let parking of sortedData" (click)="onEditClick(parking)">
+      <td>{{parking.lokalizacja}}</td>
+      <td>{{parking.liczbaMiejsc}}</td>
+    </tr>
+  </table>
+</mat-card>
+

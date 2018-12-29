@@ -44,6 +44,10 @@ import { CollisionComponent } from './collision/collision.component';
 import { CollisionListComponent } from './collision/collision-list/collision-list.component';
 import { CollisionAddComponent } from './collision/collision-add/collision-add.component';
 import { CollisionEditComponent } from './collision/collision-edit/collision-edit.component';
+import { ParkingComponent } from './parking/parking.component';
+import { ParkingListComponent } from './parking/parking-list/parking-list.component';
+import { ParkingAddComponent } from './parking/parking-add/parking-add.component';
+import { ParkingEditComponent } from './parking/parking-edit/parking-edit.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,11 @@ import { CollisionEditComponent } from './collision/collision-edit/collision-edi
     CollisionComponent,
     CollisionListComponent,
     CollisionAddComponent,
-    CollisionEditComponent
+    CollisionEditComponent,
+    ParkingComponent,
+    ParkingListComponent,
+    ParkingAddComponent,
+    ParkingEditComponent
   ],
   imports: [
     BrowserModule,

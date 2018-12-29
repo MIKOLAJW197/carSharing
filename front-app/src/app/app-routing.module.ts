@@ -21,6 +21,9 @@ import {TopUpEditComponent} from "./top-up/top-up-edit/top-up-edit.component";
 import {CollisionComponent} from "./collision/collision.component";
 import {CollisionAddComponent} from "./collision/collision-add/collision-add.component";
 import {CollisionEditComponent} from "./collision/collision-edit/collision-edit.component";
+import {ParkingComponent} from "./parking/parking.component";
+import {ParkingAddComponent} from "./parking/parking-add/parking-add.component";
+import {ParkingEditComponent} from "./parking/parking-edit/parking-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -107,6 +110,18 @@ const routes: Routes = [
   {
     path: 'collision-edit',
     component: CollisionEditComponent
+  },
+  {
+    path: 'parking',
+    component: ParkingComponent
+  },
+  {
+    path: 'parking-add',
+    component: ParkingAddComponent
+  },
+  {
+    path: 'parking-edit',
+    component: ParkingEditComponent
   },
 
 ];

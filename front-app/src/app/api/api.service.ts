@@ -38,4 +38,8 @@ export class ApiService {
   getAllCollisions(): Observable<any> {
     return this.http.get(this.endpoint + 'kolizja');
   }
+
+  getAllParkings(): Observable<any> {
+    return this.http.get(this.endpoint + 'parking');
+  }
 }
