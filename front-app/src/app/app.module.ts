@@ -40,6 +40,10 @@ import { TopUpComponent } from './top-up/top-up.component';
 import { TopUpListComponent } from './top-up/top-up-list/top-up-list.component';
 import { TopUpAddComponent } from './top-up/top-up-add/top-up-add.component';
 import { TopUpEditComponent } from './top-up/top-up-edit/top-up-edit.component';
+import { CollisionComponent } from './collision/collision.component';
+import { CollisionListComponent } from './collision/collision-list/collision-list.component';
+import { CollisionAddComponent } from './collision/collision-add/collision-add.component';
+import { CollisionEditComponent } from './collision/collision-edit/collision-edit.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,11 @@ import { TopUpEditComponent } from './top-up/top-up-edit/top-up-edit.component';
     TopUpComponent,
     TopUpListComponent,
     TopUpAddComponent,
-    TopUpEditComponent
+    TopUpEditComponent,
+    CollisionComponent,
+    CollisionListComponent,
+    CollisionAddComponent,
+    CollisionEditComponent
   ],
   imports: [
     BrowserModule,

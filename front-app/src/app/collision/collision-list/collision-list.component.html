@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>Collisions List
+    <button mat-fab color="primary" [routerLink]="['/collision-add']">+</button>
+  </mat-card-title>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="id">ID kolizji</th>
+      <th mat-sort-header="localization">Lokalizacja</th>
+      <th mat-sort-header="date">Data kolizji</th>
+      <th mat-sort-header="dateStart">Data rozpoczecia przejazdu</th>
+      <th mat-sort-header="mail">Uzytkownik</th>
+      <th mat-sort-header="car">Samochod</th>
+      <th mat-sort-header="worker">Pracownik (pesel)</th>
+      <th mat-sort-header="worker-loc">Lokalizacja pracownika</th>
+    </tr>
+
+    <tr class="clickable" *ngFor="let collision of sortedData" (click)="onEditClick(collision)">
+      <td>{{collision.id}}</td>
+      <td>{{collision.lokalizacja}}</td>
+      <td>{{collision.data}}</td>
+      <td>{{collision.przejazdDataRozpoczecia}}</td>
+      <td>{{collision.przejazdUzytkownikMail}}</td>
+      <td>{{collision.przejazdNrRejestracyjny}}</td>
+      <td>{{collision.pracownikPesel}}</td>
+      <td>{{collision.pracownikLokalizacja}}</td>
+    </tr>
+  </table>
+</mat-card>
+

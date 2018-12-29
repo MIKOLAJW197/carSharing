@@ -34,4 +34,8 @@ export class ApiService {
   getAllTopUps(): Observable<any> {
     return this.http.get(this.endpoint + 'doladowanie_konta');
   }
+
+  getAllCollisions(): Observable<any> {
+    return this.http.get(this.endpoint + 'kolizja');
+  }
 }

@@ -18,6 +18,9 @@ import {TariffEditComponent} from "./tariff/tariff-edit/tariff-edit.component";
 import {TopUpComponent} from "./top-up/top-up.component";
 import {TopUpAddComponent} from "./top-up/top-up-add/top-up-add.component";
 import {TopUpEditComponent} from "./top-up/top-up-edit/top-up-edit.component";
+import {CollisionComponent} from "./collision/collision.component";
+import {CollisionAddComponent} from "./collision/collision-add/collision-add.component";
+import {CollisionEditComponent} from "./collision/collision-edit/collision-edit.component";
 
 const routes: Routes = [
   // {path: '', redirectTo: '/car-list', pathMatch: 'full'},
@@ -92,6 +95,18 @@ const routes: Routes = [
   {
     path: 'top-up-edit',
     component: TopUpEditComponent
+  },
+  {
+    path: 'collision',
+    component: CollisionComponent
+  },
+  {
+    path: 'collision-add',
+    component: CollisionAddComponent
+  },
+  {
+    path: 'collision-edit',
+    component: CollisionEditComponent
   },
 
 ];
