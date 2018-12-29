@@ -14,4 +14,8 @@ export class ApiService {
   getAllCars(): Observable<any> {
     return this.http.get(this.endpoint + 'samochod');
   }
+
+  getAllUsers(): Observable<any> {
+    return this.http.get(this.endpoint + 'uzytkownik');
+  }
 }

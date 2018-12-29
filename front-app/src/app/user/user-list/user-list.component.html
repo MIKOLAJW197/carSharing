@@ -1,20 +1,27 @@
 <mat-card>
-  <mat-card-title>Users List <button mat-fab color="primary" [routerLink]="['/user-add']">+</button></mat-card-title>
+  <mat-card-title>Users List
+    <button mat-fab color="primary" [routerLink]="['/user-add']">+</button>
+  </mat-card-title>
   <table matSort (matSortChange)="sortData($event)">
     <tr>
-      <th mat-sort-header="name">Dessert (100g)</th>
-      <th mat-sort-header="calories">Calories</th>
-      <th mat-sort-header="fat">Fat (g)</th>
-      <th mat-sort-header="carbs">Carbs (g)</th>
-      <th mat-sort-header="protein">Protein (g)</th>
+      <th mat-sort-header="mail">Mail</th>
+      <th mat-sort-header="haslo">Haslo</th>
+      <th mat-sort-header="imie">Imie</th>
+      <th mat-sort-header="nazwisko">Nazwisko</th>
+      <th mat-sort-header="pesel">Pesel</th>
+      <th mat-sort-header="konto">Stan Konta</th>
     </tr>
 
-    <tr class="clickable" *ngFor="let dessert of sortedData" (click)="onEditClick(dessert)">
-      <td>{{dessert.name}}</td>
-      <td>{{dessert.calories}}</td>
-      <td>{{dessert.fat}}</td>
-      <td>{{dessert.carbs}}</td>
-      <td>{{dessert.protein}}</td>
+    <tr class="clickable" *ngFor="let user of sortedData" (click)="onEditClick(user)">
+      <td>{{user.mail}}</td>
+      <td (mouseover)="showPassword=true" (mouseout)="showPassword=false">
+        <span *ngIf="!showPassword">*******</span>
+        <span *ngIf="showPassword">{{user.haslo}}</span>
+      </td>
+      <td>{{user.imie}}</td>
+      <td>{{user.nazwisko}}</td>
+      <td>{{user.pesel}}</td>
+      <td>{{user.stanSkarbonki}}</td>
     </tr>
   </table>
 </mat-card>
