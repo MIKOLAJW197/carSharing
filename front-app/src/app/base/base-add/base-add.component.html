@@ -1,3 +1,13 @@
-<p>
-  base-add works!
-</p>
+<form [formGroup]="baseForm">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Lokalizacja" [formControlName]="'lokalizacja'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Liczba Miejsc" [formControlName]="'liczbaMiejsc'" type="number">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-fab color="primary" (click)="onSubmit()">+</button>

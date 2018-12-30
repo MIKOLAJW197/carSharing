@@ -6,7 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -15,7 +15,7 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import {AppRoutingModule} from "./app-routing.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserComponent} from './user/user.component';
 import {UserEditComponent} from './user/user-edit/user-edit.component';
 import {UserListComponent} from './user/user-list/user-list.component';
@@ -60,6 +60,7 @@ import { RefuelComponent } from './refuel/refuel.component';
 import { RefuelAddComponent } from './refuel/refuel-add/refuel-add.component';
 import { RefuelEditComponent } from './refuel/refuel-edit/refuel-edit.component';
 import { RefuelListComponent } from './refuel/refuel-list/refuel-list.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -122,7 +123,14 @@ import { RefuelListComponent } from './refuel/refuel-list/refuel-list.component'
     FormsModule,
     MatMenuModule,
     MatIconModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
