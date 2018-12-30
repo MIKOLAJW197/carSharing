@@ -6,11 +6,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
-  MatCardModule, MatFormFieldModule,
+  MatCardModule, MatDatepickerModule, MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatMenuModule, MatRadioModule,
+  MatMenuModule, MatNativeDateModule, MatRadioModule,
   MatSortModule,
   MatToolbarModule
 } from "@angular/material";
@@ -126,7 +126,9 @@ import {CommonModule} from "@angular/common";
     MatSortModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     CommonModule,
