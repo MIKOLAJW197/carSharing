@@ -10,7 +10,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatRadioModule,
   MatSortModule,
   MatToolbarModule
 } from "@angular/material";
@@ -125,7 +125,8 @@ import {CommonModule} from "@angular/common";
     MatIconModule,
     MatSortModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule
   ],
   exports: [
     CommonModule,
