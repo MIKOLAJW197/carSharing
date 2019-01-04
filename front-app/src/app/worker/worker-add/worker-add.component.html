@@ -1,3 +1,22 @@
-<p>
-  worker-add works!
-</p>
+<form [formGroup]="workerForm">
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="pesel" [formControlName]="'pesel'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="imie" [formControlName]="'imie'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nazwisko" [formControlName]="'nazwisko'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'" type="text">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-fab color="primary" (click)="onSubmit()">+</button>
