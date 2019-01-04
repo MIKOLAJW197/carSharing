@@ -1,3 +1,34 @@
-<p>
-  work-add works!
-</p>
+<form [formGroup]="workForm">
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="id" [formControlName]="'id'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="co było robione" [formControlName]="'coRobione'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [formControlName]="'odKiedy'" placeholder="Wybierz date rozpoczecia obowiazywania">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" [formControlName]="'doKiedy'" placeholder="Wybierz date zakonczenia obowiazywania">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Cena Kilometra" [formControlName]="'bazaLokalizacja'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nr rejestracyjny pojazdu" [formControlName]="'samochodNrRejestracyjny'" type="text">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-fab color="primary" (click)="onSubmit()">+</button>
