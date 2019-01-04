@@ -1,3 +1,30 @@
-<p>
-  user-add works!
-</p>
+<form [formGroup]="userForm">
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="mail" [formControlName]="'mail'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="haslo" [formControlName]="'haslo'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="imie" [formControlName]="'imie'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="nazwisko" [formControlName]="'nazwisko'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="pesel" [formControlName]="'pesel'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="stan skarbonki" [formControlName]="'stanSkarbonki'" type="number">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-fab color="primary" (click)="onSubmit()">+</button>
