@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var cors = require('cors');
+
+app.use(cors());
 
 app.use('/restful',require('./restful/default-router'))
 app.use('/baza',require('./restful/routers/baza'))
