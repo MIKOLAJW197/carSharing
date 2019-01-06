@@ -3,6 +3,7 @@ import {RouteWithDataService} from "../../route-with-data.service";
 import {ApiService} from "../../api/api.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {User} from "../user-list/user-list.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-edit',
@@ -15,23 +16,33 @@ export class UserEditComponent implements OnInit {
   user: User;
 
   constructor(private apiService: ApiService,
-              private routeWithData: RouteWithDataService) {
+              private routeWithData: RouteWithDataService,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.initForm();
     this.user = (this.routeWithData.data) as User;
     this.patchForm();
+    this.userForm.get('pesel').disable();
   }
 
   onSubmit() {
-
+    const user = {
+      mail: this.userForm.get('mail').value,
+      haslo: this.userForm.get('haslo').value,
+      imie: this.userForm.get('imie').value,
+      nazwisko: this.userForm.get('nazwisko').value,
+      pesel: this.userForm.get('pesel').value,
+      stan_skarbonki: this.userForm.get('stanSkarbonki').value,
+    };
+    this.apiService.updateUser(user).subscribe(resp => this.router.navigate(['/users']));
   }
 
   onDeleteClick() {
       if(window.confirm('Are sure you want to delete this item ?')){
         //put your delete method logic here
-        // this.apiservice.delete
+        this.apiService.delUser(this.user).subscribe(resp => this.router.navigate(['/users']));
       }
   }
 

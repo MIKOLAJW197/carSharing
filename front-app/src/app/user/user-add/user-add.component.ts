@@ -27,8 +27,8 @@ export class UserAddComponent implements OnInit {
       pesel: this.userForm.get('pesel').value,
       stan_skarbonki: this.userForm.get('stanSkarbonki').value,
     };
-    console.log(user);
-    this.apiService.addUser(user).subscribe(user => console.log(user));
+    // console.log(user);
+    this.apiService.addUser(user).subscribe(resp => console.log(resp));
   }
 
   private initForm() {

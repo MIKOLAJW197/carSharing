@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/internal/Observable";
 import {of} from "rxjs/internal/observable/of";
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -69,10 +70,37 @@ export class ApiService {
   //ADD
 
   addUser(user: any): Observable<any> {
-    return this.http.post<any>(this.endpoint + 'uzytkownik', user, this.httpOptions);
-
+    return this.http.post<any>(this.endpoint + 'uzytkownik', user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('addUser', user))
+      );
   }
 
+
+  //UPDATE
+
+  updateUser(user: any): Observable<any> {
+    return this.http.put(this.endpoint + 'uzytkownik/' + user.pesel, user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('updateUser', user))
+      );
+  }
+
+  //DEL
+
+  delUser(user: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'uzytkownik/' + user.pesel, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delUser', user))
+      );
+  }
+
+  delBase(base: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'baza/' + base, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delUser', base))
+      );
+  }
 
   private extractData(res: Response) {
     let body = res;
@@ -84,7 +112,7 @@ export class ApiService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(operation, error); // log to console instead
+      console.error('ERROR  ', operation, error); // log to console instead
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
