@@ -1,0 +1,29 @@
+{
+  "db": {
+    "client": "mysql",
+    "connection": {
+      "host": "laganowski.com",
+      "port": "3306",
+      "user": "carsharing",
+      "password": "bombelek",
+      "database": "carsharing",
+      "charset": "utf8",
+      "supportBigNumbers": true,
+      "bigNumberStrings": true
+    }
+  },
+  "tables": [
+    "baza",
+    "cennik",
+    "doladowanie_konta",
+    "kolizja",
+    "parking",
+    "pracer_techniczne",
+    "pracownik",
+    "przejazd",
+    "samochod",
+    "tankowanie",
+    "uzytkownik"
+  ],
+  "generatePath": "C:\\Users\\klaganowski\\Desktop\\GIT\\carSharing\\node-app\\restful"
+}
