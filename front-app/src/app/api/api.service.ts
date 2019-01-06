@@ -1,12 +1,22 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/internal/Observable";
+import {of} from "rxjs/internal/observable/of";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  endpoint = '//localhost:8080/';
+  endpoint = '//localhost:3000/';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'my-auth-token',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+    })
+  };
 
   constructor(private http: HttpClient) {
   }
@@ -44,7 +54,7 @@ export class ApiService {
   }
 
   getAllTechnicalWorks(): Observable<any> {
-    return this.http.get(this.endpoint + 'pracer_techniczne');
+    return this.http.get(this.endpoint + 'prace_techniczne');
   }
 
   getAllWorkers(): Observable<any> {
@@ -54,4 +64,30 @@ export class ApiService {
   getAllRefuel(): Observable<any> {
     return this.http.get(this.endpoint + 'tankowanie');
   }
+
+
+  //ADD
+
+  addUser(user: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'uzytkownik', user, this.httpOptions);
+
+  }
+
+
+  private extractData(res: Response) {
+    let body = res;
+    return body || {};
+  }
+
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(operation, error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  };
 }

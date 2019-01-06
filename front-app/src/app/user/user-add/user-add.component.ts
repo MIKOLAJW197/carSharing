@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {ApiService} from "../../api/api.service";
 
 @Component({
   selector: 'app-user-add',
@@ -10,7 +11,7 @@ export class UserAddComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
@@ -18,14 +19,16 @@ export class UserAddComponent implements OnInit {
   }
 
   onSubmit() {
-    // const text = this.textForm.get('text').value;
-    // this.orginalString=text;
-    // const transformation = this.transformationList.map(el => el.key).join(',');
-    // const request = AppComponent.toNewRequest(text, transformation);
-    // this.apiService.getTransformedText(request).subscribe(resp => {
-    //   this.transformedString=resp.transformed
-    //   this.openAddFileDialog();
-    // });
+    const user = {
+      mail: this.userForm.get('mail').value,
+      haslo: this.userForm.get('haslo').value,
+      imie: this.userForm.get('imie').value,
+      nazwisko: this.userForm.get('nazwisko').value,
+      pesel: this.userForm.get('pesel').value,
+      stan_skarbonki: this.userForm.get('stanSkarbonki').value,
+    };
+    console.log(user);
+    this.apiService.addUser(user).subscribe(user => console.log(user));
   }
 
   private initForm() {

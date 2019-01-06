@@ -2,14 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Sort} from "@angular/material";
 import {Router} from "@angular/router";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface User {
+  pesel: string;
   mail: string;
   haslo: string;
   imie: string;
   nazwisko: string;
-  pesel: number;
-  stanSkarbonki: number;
+  stan_skarbonki: number;
 }
 
 @Component({
@@ -24,7 +25,8 @@ export class UserListComponent implements OnInit {
   showPassword: boolean;
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
     this.showPassword = false;
   }
@@ -38,7 +40,8 @@ export class UserListComponent implements OnInit {
 
   onEditClick(user: User) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/user-edit']);
+    // this.router.navigate(['/user-edit']);
+    this.routeWithData.navigateWithRouteData(user,['/user-edit']);
   }
 
   sortedData: User[];
@@ -64,7 +67,7 @@ export class UserListComponent implements OnInit {
         case 'pesel':
           return compare(a.pesel, b.pesel, isAsc);
         case 'konto':
-          return compare(a.stanSkarbonki, b.stanSkarbonki, isAsc);
+          return compare(a.stan_skarbonki, b.stan_skarbonki, isAsc);
         default:
           return 0;
       }
