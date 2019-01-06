@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Ride {
   dataRozpoczecia: Date;
@@ -23,7 +24,8 @@ export class RideListComponent implements OnInit {
   data: Ride[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -36,7 +38,8 @@ export class RideListComponent implements OnInit {
 
   onEditClick(ride: Ride) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/ride-edit']);
+    // this.router.navigate(['/ride-edit']);
+    this.routeWithData.navigateWithRouteData(ride, ['/ride-edit']);
   }
 
   sortedData: Ride[];

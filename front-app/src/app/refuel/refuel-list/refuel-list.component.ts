@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Refuel {
   id: number;
@@ -22,7 +23,8 @@ export class RefuelListComponent implements OnInit {
   data: Refuel[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -35,7 +37,8 @@ export class RefuelListComponent implements OnInit {
 
   onEditClick(refuel: Refuel) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/refuel-edit']);
+    // this.router.navigate(['/refuel-edit']);
+    this.routeWithData.navigateWithRouteData(refuel,['/refuel-edit']);
   }
 
   sortedData: Refuel[];

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Base {
   lokalizacja: string;
@@ -18,7 +19,8 @@ export class BaseListComponent implements OnInit {
   data: Base[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -31,7 +33,7 @@ export class BaseListComponent implements OnInit {
 
   onEditClick(base: Base) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/base-edit']);
+    this.routeWithData.navigateWithRouteData(base,['/base-edit']);
   }
 
   sortedData: Base[];

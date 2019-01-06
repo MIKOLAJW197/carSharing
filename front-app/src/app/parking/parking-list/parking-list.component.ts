@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Parking {
   lokalizacja: string;
@@ -17,7 +18,8 @@ export class ParkingListComponent implements OnInit {
   data: Parking[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -30,7 +32,8 @@ export class ParkingListComponent implements OnInit {
 
   onEditClick(parking: Parking) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/parking-edit']);
+    // this.router.navigate(['/parking-edit']);
+    this.routeWithData.navigateWithRouteData(parking,['/parking-edit']);
   }
 
   sortedData: Parking[];

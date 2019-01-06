@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Collision {
   id: number;
@@ -25,7 +26,8 @@ export class CollisionListComponent implements OnInit {
   data: Collision[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -38,7 +40,8 @@ export class CollisionListComponent implements OnInit {
 
   onEditClick(collision: Collision) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/collision-edit']);
+    // this.router.navigate(['/collision-edit']);
+    this.routeWithData.navigateWithRouteData(collision,['/collision-edit']);
   }
 
   sortedData: Collision[];

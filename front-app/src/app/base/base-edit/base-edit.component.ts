@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {RouteWithDataService} from "../../route-with-data.service";
+import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-base-edit',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService,
+              private router: Router,
+              private routeWithData: RouteWithDataService) { }
 
   ngOnInit() {
+    //TOCHECK
+    console.log(this.routeWithData.data);
   }
 
 }
