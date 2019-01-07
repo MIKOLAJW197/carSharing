@@ -116,6 +116,13 @@ export class ApiService {
       );
   }
 
+  delParking(parking: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'parking/' + parking, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delCol', parking))
+      );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || {};
