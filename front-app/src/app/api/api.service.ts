@@ -102,6 +102,13 @@ export class ApiService {
       );
   }
 
+  delCar(car: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'samochod/' + car, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delCar', car))
+      );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || {};

@@ -1,3 +1,39 @@
-<p>
-  car-edit works!
-</p>
+<form [formGroup]="carForm">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="nrRejestracyjny" [formControlName]="'nrRejestracyjny'" type="text">
+    </mat-form-field>
+
+    <mat-radio-group [formControlName]="'dostepny'">
+      <mat-radio-button value="1">Wolny &nbsp;</mat-radio-button>
+      <mat-radio-button value="0">Zajety</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+      <input matInput placeholder="model" [formControlName]="'model'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="marka" [formControlName]="'marka'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Przebieg" [formControlName]="'przebieg'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="lokalizacjaPozaP" [formControlName]="'lokalizacjaPozaP'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="parkingLokalizacja" [formControlName]="'parkingLokalizacja'" type="text">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-button color="primary" (click)="onSubmit()">Edytuj</button>
+<button mat-button color="red" (click)="onDeleteClick()">USUŃ</button>
