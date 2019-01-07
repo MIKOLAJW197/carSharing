@@ -109,6 +109,13 @@ export class ApiService {
       );
   }
 
+  delCollision(collision: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'kolizja/' + collision, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delCol', collision))
+      );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || {};

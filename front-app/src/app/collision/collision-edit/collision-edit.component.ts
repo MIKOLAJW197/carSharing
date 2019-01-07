@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {ApiService} from "../../api/api.service";
+import {RouteWithDataService} from "../../route-with-data.service";
+import {Router} from "@angular/router";
+import {Collision} from "../collision-list/collision-list.component";
 
 @Component({
   selector: 'app-collision-edit',
@@ -7,9 +12,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollisionEditComponent implements OnInit {
 
-  constructor() { }
+  collisionForm: FormGroup;
+  collision: Collision;
 
-  ngOnInit() {
+  constructor(private apiService: ApiService,
+              private routeWithData: RouteWithDataService,
+              private router: Router) {
   }
 
+  ngOnInit() {
+    this.initForm();
+    this.collision = (this.routeWithData.data) as Collision;
+    this.patchForm();
+  }
+
+  onSubmit() {
+  }
+
+  onDeleteClick() {
+    if (window.confirm('Are sure you want to delete this item ?')) {
+      //put your delete method logic here
+      this.apiService.delCollision(this.collision).subscribe(resp => this.router.navigate(['/collisions']));
+    }
+  }
+
+
+  private initForm() {
+    this.collisionForm = new FormGroup({
+      id: new FormControl(),
+      lokalizacja: new FormControl(),
+      data: new FormControl(),
+      przejazdDataRozpoczecia: new FormControl(),
+      przejazdUzytkownikMail: new FormControl(),
+      przejazdNrRejestracyjny: new FormControl(),
+      pracownikPesel: new FormControl(),
+      pracownikLokalizacja: new FormControl(),
+    });
+  }
+
+  private patchForm() {
+    this.collisionForm.get('id').patchValue(this.collision.id);
+    this.collisionForm.get('lokalizacja').patchValue(this.collision.lokalizacja);
+    this.collisionForm.get('data').patchValue(this.collision.data);
+    this.collisionForm.get('przejazdDataRozpoczecia').patchValue(this.collision.przejazdDataRozpoczecia);
+    this.collisionForm.get('przejazdUzytkownikMail').patchValue(this.collision.przejazdUzytkownikMail);
+    this.collisionForm.get('przejazdNrRejestracyjny').patchValue(this.collision.przejazdNrRejestracyjny);
+    this.collisionForm.get('pracownikPesel').patchValue(this.collision.pracownikPesel);
+    this.collisionForm.get('pracownikLokalizacja').patchValue(this.collision.pracownikLokalizacja);
+  }
 }

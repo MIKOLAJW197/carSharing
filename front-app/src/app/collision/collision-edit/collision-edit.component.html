@@ -1,3 +1,43 @@
-<p>
-  collision-edit works!
-</p>
+<form [formGroup]="collisionForm">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="id" [formControlName]="'id'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="lokalizacja" [formControlName]="'lokalizacja'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [formControlName]="'data'" placeholder="Wybierz date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" [formControlName]="'przejazdDataRozpoczecia'"
+             placeholder="data rozpoczecia przejazdu">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mail uzytkownika" [formControlName]="'przejazdUzytkownikMail'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="nr rejestracyjny pojazdu" [formControlName]="'przejazdNrRejestracyjny'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Pesel pracownika" [formControlName]="'pracownikPesel'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Lokalizacja pracownika" [formControlName]="'pracownikLokalizacja'" type="number">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-button color="primary" (click)="onSubmit()">Edytuj</button>
+<button mat-button color="red" (click)="onDeleteClick()">USUŃ</button>
