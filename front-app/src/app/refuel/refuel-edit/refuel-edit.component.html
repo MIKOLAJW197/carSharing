@@ -1,3 +1,35 @@
-<p>
-  refuel-edit works!
-</p>
+<form [formGroup]="refuelForm">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="id" [formControlName]="'id'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="siecStacji" [formControlName]="'siecStacji'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="ileLitrow" [formControlName]="'ileLitrow'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="kwota" [formControlName]="'kwota'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [formControlName]="'przejazdDataRozpoczecia'" placeholder="Wybierz date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mail uzytkownika" [formControlName]="'przejazdUzytkownikMail'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="nr rejestracyjny pojazdu" [formControlName]="'przejazdNrRejestracyjny'" type="text">
+    </mat-form-field>
+  </div>
+</form>
+
+<button mat-fab color="primary" (click)="onSubmit()">+</button>

@@ -123,6 +123,13 @@ export class ApiService {
       );
   }
 
+  delRefuel(refuel: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'tankowanie/' + refuel, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delCol', refuel))
+      );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || {};
