@@ -130,6 +130,13 @@ export class ApiService {
       );
   }
 
+  delRide(ride: any): Observable<any> { //TODO
+    return this.http.delete(this.endpoint + 'przejazd/' + ride, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('delCol', ride))
+      );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || {};
