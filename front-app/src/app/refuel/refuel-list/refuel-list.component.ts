@@ -6,12 +6,10 @@ import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Refuel {
   id: number;
-  siecStacji: string;
-  ileLitrow: number;
+  siec_stacji: string;
+  ile_litrow: number;
   kwota: number;
-  przejazdDataRozpoczecia: Date;
-  przejazdUzytkownikMail: string;
-  przejazdNrRejestracyjny: string;
+  przejazd_id: number;
 }
 
 @Component({
@@ -56,17 +54,13 @@ export class RefuelListComponent implements OnInit {
         case 'ID':
           return compare(a.id, b.id, isAsc);
         case 'company':
-          return compare(a.siecStacji, b.siecStacji, isAsc);
+          return compare(a.siec_stacji, b.siec_stacji, isAsc);
         case 'amount':
-          return compare(a.ileLitrow, b.ileLitrow, isAsc);
+          return compare(a.ile_litrow, b.ile_litrow, isAsc);
         case 'price':
           return compare(a.kwota, b.kwota, isAsc);
-        case 'dateStart':
-          return compare(a.przejazdDataRozpoczecia, b.przejazdDataRozpoczecia, isAsc);
-        case 'mail':
-          return compare(a.przejazdUzytkownikMail, b.przejazdUzytkownikMail, isAsc);
-        case 'car':
-          return compare(a.przejazdNrRejestracyjny, b.przejazdNrRejestracyjny, isAsc);
+        case 'ride':
+          return compare(a.przejazd_id, b.przejazd_id, isAsc);
         default:
           return 0;
       }

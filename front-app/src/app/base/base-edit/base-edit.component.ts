@@ -47,6 +47,6 @@ export class BaseEditComponent implements OnInit {
 
   private patchForm() {
     this.baseForm.get('lokalizacja').patchValue(this.base.lokalizacja);
-    this.baseForm.get('liczbaMiejsc').patchValue(this.base.liczbaMiejsc);
+    this.baseForm.get('liczbaMiejsc').patchValue(this.base.liczba_miejsc);
   }
 }

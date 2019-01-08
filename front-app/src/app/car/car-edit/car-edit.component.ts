@@ -51,12 +51,13 @@ export class CarEditComponent implements OnInit {
   }
 
   private patchForm() {
-    this.carForm.get('nrRejestracyjny').patchValue(this.car.nrRejestracyjny);
+    this.carForm.get('nrRejestracyjny').patchValue(this.car.nr_rejestracyjny);
     this.carForm.get('dostepny').patchValue(this.car.dostepny);
     this.carForm.get('model').patchValue(this.car.model);
     this.carForm.get('marka').patchValue(this.car.marka);
     this.carForm.get('przebieg').patchValue(this.car.przebieg);
-    this.carForm.get('lokalizacjaPozaP').patchValue(this.car.lokalizacjaPozaP);
-    this.carForm.get('bazaLokalizacja').patchValue(this.car.bazaLokalizacja);
-    this.carForm.get('parkingLokalizacja').patchValue(this.car.parkingLokalizacja);
+    this.carForm.get('lokalizacjaPozaP').patchValue(this.car.lokalizacja_poza_p);
+    this.carForm.get('bazaLokalizacja').patchValue(this.car.baza_id);
+    this.carForm.get('parkingLokalizacja').patchValue(this.car.parking_id);
   }
+}

@@ -6,11 +6,11 @@ import {Sort} from "@angular/material";
 
 export interface Work {
   id: number;
-  coRobione: string;
-  odKiedy: Date;
-  doKiedy: Date;
-  bazaLokalizacja: string;
-  samochodNrRejestracyjny: string;
+  co_robione: string;
+  od_kiedy: Date;
+  do_kiedy: Date;
+  baza_id: number;
+  samochod_id: number;
 }
 
 @Component({
@@ -53,15 +53,15 @@ export class WorkListComponent implements OnInit {
         case 'ID':
           return compare(a.id, b.id, isAsc);
         case 'work':
-          return compare(a.coRobione, b.coRobione, isAsc);
+          return compare(a.co_robione, b.co_robione, isAsc);
         case 'dateStart':
-          return compare(a.odKiedy, b.odKiedy, isAsc);
+          return compare(a.od_kiedy, b.od_kiedy, isAsc);
         case 'dateStop':
-          return compare(a.doKiedy, b.doKiedy, isAsc);
+          return compare(a.do_kiedy, b.do_kiedy, isAsc);
         case 'base':
-          return compare(a.bazaLokalizacja, b.bazaLokalizacja, isAsc);
+          return compare(a.baza_id, b.baza_id, isAsc);
         case 'car':
-          return compare(a.samochodNrRejestracyjny, b.samochodNrRejestracyjny, isAsc);
+          return compare(a.samochod_id, b.samochod_id, isAsc);
         default:
           return 0;
       }

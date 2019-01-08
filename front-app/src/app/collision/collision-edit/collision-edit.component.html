@@ -14,28 +14,15 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
+
     <mat-form-field>
-      <input matInput [matDatepicker]="picker2" [formControlName]="'przejazdDataRozpoczecia'"
-             placeholder="data rozpoczecia przejazdu">
-      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2></mat-datepicker>
+      <input matInput placeholder="Przejazd id" [formControlName]="'przejazd'" type="number">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Mail uzytkownika" [formControlName]="'przejazdUzytkownikMail'" type="text">
+      <input matInput placeholder=" ID PRACOWNIKA" [formControlName]="'prac_id'" type="number">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="nr rejestracyjny pojazdu" [formControlName]="'przejazdNrRejestracyjny'" type="text">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Pesel pracownika" [formControlName]="'pracownikPesel'" type="number">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Lokalizacja pracownika" [formControlName]="'pracownikLokalizacja'" type="number">
-    </mat-form-field>
   </div>
 </form>
 

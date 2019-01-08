@@ -5,14 +5,15 @@ import {Sort} from "@angular/material";
 import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Car {
-  nrRejestracyjny: string;
+  id: number;
+  nr_rejestracyjny: string;
   dostepny: boolean;
   model: string;
   marka: string;
   przebieg: number;
-  lokalizacjaPozaP: string;
-  bazaLokalizacja: string;
-  parkingLokalizacja: string;
+  lokalizacja_poza_p: string;
+  baza_id: string;
+  parking_id: string;
 }
 
 @Component({
@@ -55,7 +56,7 @@ export class CarListComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'NrRejestracyjny':
-          return compare(a.nrRejestracyjny, b.nrRejestracyjny, isAsc);
+          return compare(a.nr_rejestracyjny, b.nr_rejestracyjny, isAsc);
         case 'dostepny':
           return compare(a.dostepny, b.dostepny, isAsc);
         case 'model':
@@ -65,11 +66,11 @@ export class CarListComponent implements OnInit {
         case 'przebieg':
           return compare(a.przebieg, b.przebieg, isAsc);
         case 'lokalizacja':
-          return compare(a.lokalizacjaPozaP, b.lokalizacjaPozaP, isAsc);
+          return compare(a.lokalizacja_poza_p, b.lokalizacja_poza_p, isAsc);
         case 'baza':
-          return compare(a.bazaLokalizacja, b.bazaLokalizacja, isAsc);
+          return compare(a.baza_id, b.baza_id, isAsc);
         case 'parking':
-          return compare(a.parkingLokalizacja, b.parkingLokalizacja, isAsc);
+          return compare(a.parking_id, b.parking_id, isAsc);
         default:
           return 0;
       }

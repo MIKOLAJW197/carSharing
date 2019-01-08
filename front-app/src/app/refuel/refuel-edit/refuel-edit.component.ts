@@ -24,7 +24,6 @@ export class RefuelEditComponent implements OnInit {
     this.initForm();
     this.refuel = (this.routeWithData.data) as Refuel;
     this.patchForm();
-    this.refuelForm.get('pesel').disable();
   }
 
   onSubmit() {
@@ -51,19 +50,15 @@ export class RefuelEditComponent implements OnInit {
       siecStacji: new FormControl(),
       ileLitrow: new FormControl(),
       kwota: new FormControl(),
-      przejazdDataRozpoczecia: new FormControl(),
-      przejazdUzytkownikMail: new FormControl(),
-      przejazdNrRejestracyjny: new FormControl()
+      przejazd: new FormControl()
     });
   }
 
   private patchForm() {
     this.refuelForm.get('id').patchValue(this.refuel.id);
-    this.refuelForm.get('siecStacji').patchValue(this.refuel.siecStacji);
-    this.refuelForm.get('ileLitrow').patchValue(this.refuel.ileLitrow);
+    this.refuelForm.get('siecStacji').patchValue(this.refuel.siec_stacji);
+    this.refuelForm.get('ileLitrow').patchValue(this.refuel.ile_litrow);
     this.refuelForm.get('kwota').patchValue(this.refuel.kwota);
-    this.refuelForm.get('przejazdDataRozpoczecia').patchValue(this.refuel.przejazdDataRozpoczecia);
-    this.refuelForm.get('przejazdUzytkownikMail').patchValue(this.refuel.przejazdUzytkownikMail);
-    this.refuelForm.get('przejazdNrRejestracyjny').patchValue(this.refuel.przejazdNrRejestracyjny);
+    this.refuelForm.get('przejazd').patchValue(this.refuel.przejazd_id);
   }
 }

@@ -42,11 +42,8 @@ export class CollisionEditComponent implements OnInit {
       id: new FormControl(),
       lokalizacja: new FormControl(),
       data: new FormControl(),
-      przejazdDataRozpoczecia: new FormControl(),
-      przejazdUzytkownikMail: new FormControl(),
-      przejazdNrRejestracyjny: new FormControl(),
+      przejazd: new FormControl(),
       pracownikPesel: new FormControl(),
-      pracownikLokalizacja: new FormControl(),
     });
   }
 
@@ -54,10 +51,7 @@ export class CollisionEditComponent implements OnInit {
     this.collisionForm.get('id').patchValue(this.collision.id);
     this.collisionForm.get('lokalizacja').patchValue(this.collision.lokalizacja);
     this.collisionForm.get('data').patchValue(this.collision.data);
-    this.collisionForm.get('przejazdDataRozpoczecia').patchValue(this.collision.przejazdDataRozpoczecia);
-    this.collisionForm.get('przejazdUzytkownikMail').patchValue(this.collision.przejazdUzytkownikMail);
-    this.collisionForm.get('przejazdNrRejestracyjny').patchValue(this.collision.przejazdNrRejestracyjny);
-    this.collisionForm.get('pracownikPesel').patchValue(this.collision.pracownikPesel);
-    this.collisionForm.get('pracownikLokalizacja').patchValue(this.collision.pracownikLokalizacja);
+    this.collisionForm.get('przejazd').patchValue(this.collision.przejazd_id);
+    this.collisionForm.get('prac_id').patchValue(this.collision.pracownik_id);
   }
 }

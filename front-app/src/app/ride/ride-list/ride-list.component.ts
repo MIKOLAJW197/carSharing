@@ -5,14 +5,15 @@ import {Sort} from "@angular/material";
 import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Ride {
-  dataRozpoczecia: Date;
-  dataZakonczenia: Date;
-  dystans: number;
-  lokalizacjaPoczatkowa: string;
-  lokalizacjaKoncowa: string;
-  uzytkownikMail: string;
-  cennikOdKiedy: Date;
-  samochodNrRejestracyjny: string;
+  id: number;
+  data_rozpoczecia: Date;
+  data_zakonczenia: Date;
+  dytans: number;
+  lokalizacja_poczatkowa: string;
+  lokalizacja_koncowa: string;
+  uzytkownik_id: number;
+  cennik_id: number;
+  samochod_id: number;
 }
 
 @Component({
@@ -55,21 +56,21 @@ export class RideListComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'dataStart':
-          return compare(a.dataRozpoczecia, b.dataRozpoczecia, isAsc);
+          return compare(a.data_rozpoczecia, b.data_rozpoczecia, isAsc);
         case 'dataStop':
-          return compare(a.dataZakonczenia, b.dataZakonczenia, isAsc);
+          return compare(a.data_zakonczenia, b.data_zakonczenia, isAsc);
         case 'dystans':
-          return compare(a.dystans, b.dystans, isAsc);
+          return compare(a.dytans, b.dytans, isAsc);
         case 'lokStart':
-          return compare(a.lokalizacjaPoczatkowa, b.lokalizacjaPoczatkowa, isAsc);
+          return compare(a.lokalizacja_poczatkowa, b.lokalizacja_poczatkowa, isAsc);
         case 'lokStop':
-          return compare(a.lokalizacjaKoncowa, b.lokalizacjaKoncowa, isAsc);
+          return compare(a.lokalizacja_koncowa, b.lokalizacja_koncowa, isAsc);
         case 'mail':
-          return compare(a.uzytkownikMail, b.uzytkownikMail, isAsc);
+          return compare(a.uzytkownik_id, b.uzytkownik_id, isAsc);
         case 'cennik':
-          return compare(a.cennikOdKiedy, b.cennikOdKiedy, isAsc);
+          return compare(a.cennik_id, b.cennik_id, isAsc);
         case 'samochod':
-          return compare(a.samochodNrRejestracyjny, b.samochodNrRejestracyjny, isAsc);
+          return compare(a.samochod_id, b.samochod_id, isAsc);
         default:
           return 0;
       }

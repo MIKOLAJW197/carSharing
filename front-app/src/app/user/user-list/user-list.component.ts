@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface User {
+  id: number;
   pesel: string;
   mail: string;
   haslo: string;

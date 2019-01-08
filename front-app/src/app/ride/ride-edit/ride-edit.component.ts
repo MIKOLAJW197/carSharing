@@ -60,13 +60,13 @@ export class RideEditComponent implements OnInit {
   }
 
   private patchForm() {
-    this.rideForm.get('dataRozpoczecia').patchValue(this.ride.dataRozpoczecia);
-    this.rideForm.get('dataZakonczenia').patchValue(this.ride.dataZakonczenia);
-    this.rideForm.get('dystans').patchValue(this.ride.dystans);
-    this.rideForm.get('lokalizacjaPoczatkowa').patchValue(this.ride.lokalizacjaPoczatkowa);
-    this.rideForm.get('lokalizacjaKoncowa').patchValue(this.ride.lokalizacjaKoncowa);
-    this.rideForm.get('uzytkownikMail').patchValue(this.ride.uzytkownikMail);
-    this.rideForm.get('samochodNrRejestracyjny').patchValue(this.ride.samochodNrRejestracyjny);
+    this.rideForm.get('dataRozpoczecia').patchValue(this.ride.data_rozpoczecia);
+    this.rideForm.get('dataZakonczenia').patchValue(this.ride.data_rozpoczecia);
+    this.rideForm.get('dystans').patchValue(this.ride.dytans);
+    this.rideForm.get('lokalizacjaPoczatkowa').patchValue(this.ride.lokalizacja_poczatkowa);
+    this.rideForm.get('lokalizacjaKoncowa').patchValue(this.ride.lokalizacja_koncowa);
+    this.rideForm.get('uzytkownikMail').patchValue(this.ride.uzytkownik_id);
+    this.rideForm.get('samochodNrRejestracyjny').patchValue(this.ride.samochod_id);
   }
 }
 

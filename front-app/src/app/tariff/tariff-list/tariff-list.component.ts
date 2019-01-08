@@ -4,10 +4,11 @@ import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 
 export interface Tariff {
-  odKiedy: Date;
-  doKiedy: Date;
-  cenaKilometra: number;
-  cenaMinuty: number;
+  id: number;
+  od_kiedy: Date;
+  do_kiedy: Date;
+  cena_kilometra: number;
+  cena_minuty: number;
 }
 
 @Component({
@@ -47,14 +48,16 @@ export class TariffListComponent implements OnInit {
     this.sortedData = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
+        case 'id':
+          return compare(a.id, b.id, isAsc);
         case 'dateStart':
-          return compare(a.odKiedy, b.odKiedy, isAsc);
+          return compare(a.od_kiedy, b.od_kiedy, isAsc);
         case 'dateStop':
-          return compare(a.doKiedy, b.doKiedy, isAsc);
+          return compare(a.do_kiedy, b.do_kiedy, isAsc);
         case 'priceDist':
-          return compare(a.cenaKilometra, b.cenaKilometra, isAsc);
+          return compare(a.cena_kilometra, b.cena_kilometra, isAsc);
         case 'priceTime':
-          return compare(a.cenaMinuty, b.cenaMinuty, isAsc);
+          return compare(a.cena_minuty, b.cena_minuty, isAsc);
         default:
           return 0;
       }

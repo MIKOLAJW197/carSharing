@@ -4,6 +4,7 @@
   </mat-card-title>
   <table matSort (matSortChange)="sortData($event)">
     <tr>
+      <th mat-sort-header="id">id</th>
       <th mat-sort-header="pesel">Pesel pracownika</th>
       <th mat-sort-header="imie">IMIE</th>
       <th mat-sort-header="nazwisko">Nazwisko</th>
@@ -11,10 +12,11 @@
     </tr>
 
     <tr class="clickable" *ngFor="let worker of sortedData" (click)="onEditClick(worker)">
+      <td>{{worker.id}}</td>
       <td>{{worker.pesel}}</td>
       <td>{{worker.imie}}</td>
       <td>{{worker.nazwisko}}</td>
-      <td>{{worker.bazaLokalizacja}}</td>
+      <td>{{worker.baza_id}}</td>
     </tr>
   </table>
 </mat-card>

@@ -4,10 +4,11 @@ import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 
 export interface TopUp {
+  id: number;
   data: Date;
   kwota: number;
-  sposobPlatnosci: string;
-  uzytkownikMail: string;
+  sposob_platnosci: string;
+  uzytkownik_id: number;
 }
 
 @Component({
@@ -52,9 +53,9 @@ export class TopUpListComponent implements OnInit {
         case 'amount':
           return compare(a.kwota, b.kwota, isAsc);
         case 'type':
-          return compare(a.sposobPlatnosci, b.sposobPlatnosci, isAsc);
+          return compare(a.sposob_platnosci, b.sposob_platnosci, isAsc);
         case 'mail':
-          return compare(a.uzytkownikMail, b.uzytkownikMail, isAsc);
+          return compare(a.uzytkownik_id, b.uzytkownik_id, isAsc);
         default:
           return 0;
       }

@@ -16,18 +16,9 @@
       <input matInput placeholder="kwota" [formControlName]="'kwota'" type="number">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" [formControlName]="'przejazdDataRozpoczecia'" placeholder="Wybierz date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Mail uzytkownika" [formControlName]="'przejazdUzytkownikMail'" type="text">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="nr rejestracyjny pojazdu" [formControlName]="'przejazdNrRejestracyjny'" type="text">
+      <input matInput placeholder="Przejazd ID" [formControlName]="'przejazd'" type="number">
     </mat-form-field>
   </div>
 </form>

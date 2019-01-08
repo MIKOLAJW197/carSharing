@@ -8,11 +8,8 @@ export interface Collision {
   id: number;
   lokalizacja: string;
   data: Date;
-  przejazdDataRozpoczecia: Date;
-  przejazdUzytkownikMail: string;
-  przejazdNrRejestracyjny: string;
-  pracownikPesel: number;
-  pracownikLokalizacja: string;
+  pracownik_id: number;
+  przejazd_id: number;
 }
 
 
@@ -62,16 +59,10 @@ export class CollisionListComponent implements OnInit {
           return compare(a.lokalizacja, b.lokalizacja, isAsc);
         case 'date':
           return compare(a.data, b.data, isAsc);
-        case 'dateStart':
-          return compare(a.przejazdDataRozpoczecia, b.przejazdDataRozpoczecia, isAsc);
-        case 'mail':
-          return compare(a.przejazdUzytkownikMail, b.przejazdUzytkownikMail, isAsc);
-        case 'car':
-          return compare(a.przejazdNrRejestracyjny, b.przejazdNrRejestracyjny, isAsc);
+        case 'ride':
+          return compare(a.przejazd_id, b.przejazd_id, isAsc);
         case 'worker':
-          return compare(a.pracownikPesel, b.pracownikPesel, isAsc);
-        case 'worker-loc':
-          return compare(a.pracownikLokalizacja, b.pracownikLokalizacja, isAsc);
+          return compare(a.pracownik_id, b.pracownik_id, isAsc);
         default:
           return 0;
       }

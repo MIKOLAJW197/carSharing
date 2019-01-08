@@ -5,8 +5,9 @@ import {Sort} from "@angular/material";
 import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Parking {
+  id: number;
   lokalizacja: string;
-  liczbaMiejsc: number;
+  liczba_miejsc: number;
 }
 
 @Component({
@@ -51,7 +52,7 @@ export class ParkingListComponent implements OnInit {
         case 'name':
           return compare(a.lokalizacja, b.lokalizacja, isAsc);
         case 'count':
-          return compare(a.liczbaMiejsc, b.liczbaMiejsc, isAsc);
+          return compare(a.liczba_miejsc, b.liczba_miejsc, isAsc);
         default:
           return 0;
       }

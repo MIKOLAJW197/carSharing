@@ -8,19 +8,15 @@
       <th mat-sort-header="company">Siec Stacji</th>
       <th mat-sort-header="amount">Litry</th>
       <th mat-sort-header="price">Kwota</th>
-      <th mat-sort-header="dateStart">Data</th>
-      <th mat-sort-header="mail">Uzytkownik</th>
-      <th mat-sort-header="car">Samochod</th>
+      <th mat-sort-header="ride">Przejazd</th>
     </tr>
 
     <tr class="clickable" *ngFor="let refuel of sortedData" (click)="onEditClick(refuel)">
       <td>{{refuel.id}}</td>
-      <td>{{refuel.siecStacji}}</td>
-      <td>{{refuel.ileLitrow}}</td>
+      <td>{{refuel.siec_stacji}}</td>
+      <td>{{refuel.ile_litrow}}</td>
       <td>{{refuel.kwota}}</td>
-      <td>{{refuel.przejazdDataRozpoczecia}}</td>
-      <td>{{refuel.przejazdUzytkownikMail}}</td>
-      <td>{{refuel.przejazdNrRejestracyjny}}</td>
+      <td>{{refuel.przejazd_id}}</td>
     </tr>
   </table>
 </mat-card>

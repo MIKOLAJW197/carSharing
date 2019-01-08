@@ -13,14 +13,14 @@
     </tr>
 
     <tr class="clickable" *ngFor="let ride of sortedData" (click)="onEditClick(ride)">
-      <td>{{ride.dataRozpoczecia}}</td>
-      <td>{{ride.dataZakonczenia}}</td>
-      <td>{{ride.dystans}}</td>
-      <td>{{ride.lokalizacjaPoczatkowa}}</td>
-      <td>{{ride.lokalizacjaKoncowa}}</td>
-      <td>{{ride.uzytkownikMail}}</td>
-      <td>{{ride.cennikOdKiedy}}</td>
-      <td>{{ride.samochodNrRejestracyjny}}</td>
+      <td>{{ride.data_rozpoczecia}}</td>
+      <td>{{ride.data_zakonczenia}}</td>
+      <td>{{ride.dytans}}</td>
+      <td>{{ride.lokalizacja_poczatkowa}}</td>
+      <td>{{ride.lokalizacja_koncowa}}</td>
+      <td>{{ride.uzytkownik_id}}</td>
+      <td>{{ride.cennik_id}}</td>
+      <td>{{ride.samochod_id}}</td>
     </tr>
   </table>
 </mat-card>

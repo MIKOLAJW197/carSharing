@@ -4,10 +4,11 @@ import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 
 export interface Worker {
+  id: number;
   pesel: number;
   imie: string;
   nazwisko: string;
-  bazaLokalizacja: string;
+  baza_id: string;
 }
 
 @Component({
@@ -48,6 +49,8 @@ export class WorkerListComponent implements OnInit {
     this.sortedData = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
+        case 'id':
+          return compare(a.id, b.id, isAsc);
         case 'pesel':
           return compare(a.pesel, b.pesel, isAsc);
         case 'imie':
@@ -55,7 +58,7 @@ export class WorkerListComponent implements OnInit {
         case 'nazwisko':
           return compare(a.nazwisko, b.nazwisko, isAsc);
         case 'baza':
-          return compare(a.bazaLokalizacja, b.bazaLokalizacja, isAsc);
+          return compare(a.baza_id, b.baza_id, isAsc);
         default:
           return 0;
       }

@@ -13,14 +13,14 @@
     </tr>
 
     <tr class="clickable" *ngFor="let car of sortedData" (click)="onEditClick(car)">
-      <td>{{car.nrRejestracyjny}}</td>
+      <td>{{car.nr_rejestracyjny}}</td>
       <td><mat-icon color="primary" [innerHTML]="car.dostepny ? 'done' : 'clear'"></mat-icon></td>
       <td>{{car.model}}</td>
       <td>{{car.marka}}</td>
       <td>{{car.przebieg}}</td>
-      <td>{{car.lokalizacjaPozaP}}</td>
-      <td>{{car.bazaLokalizacja}}</td>
-      <td>{{car.parkingLokalizacja}}</td>
+      <td>{{car.lokalizacja_poza_p}}</td>
+      <td>{{car.baza_id}}</td>
+      <td>{{car.parking_id}}</td>
     </tr>
   </table>
 </mat-card>

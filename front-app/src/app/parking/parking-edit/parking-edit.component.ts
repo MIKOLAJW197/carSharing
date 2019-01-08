@@ -54,6 +54,6 @@ export class ParkingEditComponent implements OnInit {
 
   private patchForm() {
     this.parkingForm.get('lokalizacja').patchValue(this.parking.lokalizacja);
-    this.parkingForm.get('liczbaMiejsc').patchValue(this.parking.liczbaMiejsc);
+    this.parkingForm.get('liczbaMiejsc').patchValue(this.parking.liczba_miejsc);
   }
 }
