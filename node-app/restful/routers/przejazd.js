@@ -18,12 +18,8 @@ router.get('/',(req,res,next)=>{
   })  
   .then((result)=>{
     res.set('X-Total-Count',totalCount)
-        
-    var cur = parsed.offset
-    res.json(result.map((x,index)=>{
-      x['__index'] = counter()
-      return x
-    }))
+    
+    res.json(result)
     
   },(err)=>{
     res.status(500).send(err.message||err)
@@ -52,19 +48,43 @@ router.post('/',(req,res,next)=>{
 
 router.get('/:id',(req,res,next)=>{
   
-  throw 'no primary key, you can not get by id!'
+  Model.where({id:req.params.id})
+  .fetch()
+  .then((model)=>{
+    res.json(model)
+  },(err)=>{
+    res.status(500).send(err.message||err)
+  })
   
 })
 
 router.put('/:id',(req,res,next)=>{
   
-  throw 'no primary key, you can not update!'
+  new Model({
+    id: req.params.id
+  }).save(req.body)
+  .then((model)=>{
+    res.json(model)
+  },(err)=>{
+    res.status(500).send(err.message||err)
+  })
+
   
 })
 
 router.delete('/:id',(req,res,next)=>{
   
-  throw 'no primary key, you can not delete!'
+  new Model({
+    id: req.params.id
+  }).destroy()
+  .then(()=>{
+    res.json({
+      error: 0
+    })
+  },(err)=>{
+    res.status(500).send(err.message||err)
+  })
+
   
 })
 

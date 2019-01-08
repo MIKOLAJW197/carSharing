@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Model = require('../models/pracer_techniczne').Model
+var Model = require('../models/prace_techniczne').Model
 var parseQuery = require('../utils').parseQuery
 var counter = require('../utils').counter
 var bodyParser = require('body-parser')

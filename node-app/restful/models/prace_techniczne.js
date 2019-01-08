@@ -1,7 +1,7 @@
 var bookshelf = require('../bookshelf')
 
 var Model = bookshelf.Model.extend({
-  tableName: 'pracer_techniczne',
+  tableName: 'prace_techniczne',
   
   idAttribute: 'id',
   

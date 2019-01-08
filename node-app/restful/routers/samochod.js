@@ -48,7 +48,7 @@ router.post('/',(req,res,next)=>{
 
 router.get('/:id',(req,res,next)=>{
   
-  Model.where({nr_boczny:req.params.id})
+  Model.where({id:req.params.id})
   .fetch()
   .then((model)=>{
     res.json(model)
@@ -61,7 +61,7 @@ router.get('/:id',(req,res,next)=>{
 router.put('/:id',(req,res,next)=>{
   
   new Model({
-    nr_boczny: req.params.id
+    id: req.params.id
   }).save(req.body)
   .then((model)=>{
     res.json(model)
@@ -75,7 +75,7 @@ router.put('/:id',(req,res,next)=>{
 router.delete('/:id',(req,res,next)=>{
   
   new Model({
-    nr_boczny: req.params.id
+    id: req.params.id
   }).destroy()
   .then(()=>{
     res.json({

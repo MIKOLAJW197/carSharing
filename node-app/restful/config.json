@@ -18,12 +18,12 @@
     "doladowanie_konta",
     "kolizja",
     "parking",
-    "pracer_techniczne",
+    "prace_techniczne",
     "pracownik",
     "przejazd",
     "samochod",
     "tankowanie",
     "uzytkownik"
   ],
-  "generatePath": "C:\\Users\\klaganowski\\Desktop\\GIT\\carSharing\\node-app\\restful"
+  "generatePath": "C:\\Users\\klaganowski\\Desktop\\node-app\\restful"
 }
