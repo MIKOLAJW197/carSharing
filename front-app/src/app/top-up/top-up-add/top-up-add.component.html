@@ -16,7 +16,11 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Uzytkownik" [formControlName]="'uzytkownikMail'" type="text">
+      <mat-select placeholder="Uzytkownik" [formControlName]="'uzytkownikMail'">
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{user.mail}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 </form>

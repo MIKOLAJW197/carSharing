@@ -134,8 +134,7 @@ import {CommonModule} from "@angular/common";
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
-  ],
+    MatSelectModule],
   exports: [
     CommonModule,
     FormsModule,

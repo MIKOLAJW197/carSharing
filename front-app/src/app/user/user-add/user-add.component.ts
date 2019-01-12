@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-add',
@@ -11,7 +12,8 @@ export class UserAddComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -20,15 +22,15 @@ export class UserAddComponent implements OnInit {
 
   onSubmit() {
     const user = {
+      pesel: this.userForm.get('pesel').value,
       mail: this.userForm.get('mail').value,
       haslo: this.userForm.get('haslo').value,
       imie: this.userForm.get('imie').value,
       nazwisko: this.userForm.get('nazwisko').value,
-      pesel: this.userForm.get('pesel').value,
       stan_skarbonki: this.userForm.get('stanSkarbonki').value,
     };
     // console.log(user);
-    this.apiService.addUser(user).subscribe(resp => console.log(resp));
+    this.apiService.addUser(user).subscribe(resp => this.router.navigate(['/users']));
   }
 
   private initForm() {

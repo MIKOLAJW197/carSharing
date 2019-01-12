@@ -29,6 +29,7 @@ export class UserEditComponent implements OnInit {
 
   onSubmit() {
     const user = {
+      id: this.user.id,
       mail: this.userForm.get('mail').value,
       haslo: this.userForm.get('haslo').value,
       imie: this.userForm.get('imie').value,
@@ -42,7 +43,8 @@ export class UserEditComponent implements OnInit {
   onDeleteClick() {
       if(window.confirm('Are sure you want to delete this item ?')){
         //put your delete method logic here
-        this.apiService.delUser(this.user).subscribe(resp => this.router.navigate(['/users']));
+        this.apiService.delUser(this.user).subscribe(
+          resp => this.router.navigate(['/users']));
       }
   }
 

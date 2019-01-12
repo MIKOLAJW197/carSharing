@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/internal/Observable";
-import {of} from "rxjs/internal/observable/of";
 import {catchError} from "rxjs/operators";
+import {throwError} from "rxjs/internal/observable/throwError";
 
 @Injectable({
   providedIn: 'root'
@@ -72,68 +72,225 @@ export class ApiService {
   addUser(user: any): Observable<any> {
     return this.http.post<any>(this.endpoint + 'uzytkownik', user, this.httpOptions)
       .pipe(
-        catchError(this.handleError('addUser', user))
-      );
+        catchError(this.handleError));
+  }
+
+  addBase(base: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'baza', base, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addParking(parking: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'parking', parking, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addTariff(tarif: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'cennik', tarif, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addTopup(top: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'doladowanie_konta', top, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addCar(car: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'samochod', car, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addRide(ride: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'przejazd', ride, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addCollision(col: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'kolizja', col, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addWork(work: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'prace_techniczne', work, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addWorker(work: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'pracownik', work, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
+  }
+
+  addRefuel(ref: any): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'tankowanie', ref, this.httpOptions)
+      .pipe(
+        catchError(this.handleError));
   }
 
 
   //UPDATE
 
   updateUser(user: any): Observable<any> {
-    return this.http.put(this.endpoint + 'uzytkownik/' + user.pesel, user, this.httpOptions)
+    return this.http.put(this.endpoint + 'uzytkownik/' + user.id, user, this.httpOptions)
       .pipe(
-        catchError(this.handleError('updateUser', user))
+        catchError(this.handleError)
+      );
+  }
+
+  updateBase(base: any): Observable<any> {
+    return this.http.put(this.endpoint + 'baza/' + base.id, base, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateParking(parking: any): Observable<any> {
+    return this.http.put(this.endpoint + 'parking/' + parking.id, parking, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateTariff(tariff: any): Observable<any> {
+    return this.http.put(this.endpoint + 'cennik/' + tariff.id, tariff, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateTop(top: any): Observable<any> {
+    return this.http.put(this.endpoint + 'doladowanie_konta/' + top.id, top, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateCar(car: any): Observable<any> {
+    return this.http.put(this.endpoint + 'samochod/' + car.id, car, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateRide(ride: any): Observable<any> {
+    return this.http.put(this.endpoint + 'przejazd/' + ride.id, ride, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateCollision(col: any): Observable<any> {
+    return this.http.put(this.endpoint + 'kolizja/' + col.id, col, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateWork(work: any): Observable<any> {
+    return this.http.put(this.endpoint + 'prace_techniczne/' + work.id, work, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateWorker(work: any): Observable<any> {
+    return this.http.put(this.endpoint + 'pracownik/' + work.id, work, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  updateRef(ref: any): Observable<any> {
+    return this.http.put(this.endpoint + 'tankowanie/' + ref.id, ref, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
       );
   }
 
   //DEL
 
-  delUser(user: any): Observable<any> {
-    return this.http.delete(this.endpoint + 'uzytkownik/' + user.pesel, this.httpOptions)
+  delUser(user: any): Observable<{}> {
+    return this.http.delete(this.endpoint + 'uzytkownik/' + user.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delUser', user))
+        catchError(this.handleError)
       );
   }
 
-  delBase(base: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'baza/' + base, this.httpOptions)
+  delBase(base: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'baza/' + base.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delUser', base))
+        catchError(this.handleError)
       );
   }
 
-  delCar(car: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'samochod/' + car, this.httpOptions)
+  delCar(car: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'samochod/' + car.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delCar', car))
+        catchError(this.handleError)
       );
   }
 
-  delCollision(collision: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'kolizja/' + collision, this.httpOptions)
+  delCollision(collision: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'kolizja/' + collision.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delCol', collision))
+        catchError(this.handleError)
       );
   }
 
-  delParking(parking: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'parking/' + parking, this.httpOptions)
+  delParking(parking: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'parking/' + parking.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delCol', parking))
+        catchError(this.handleError)
       );
   }
 
-  delRefuel(refuel: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'tankowanie/' + refuel, this.httpOptions)
+  delRefuel(refuel: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'tankowanie/' + refuel.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delCol', refuel))
+        catchError(this.handleError)
       );
   }
 
-  delRide(ride: any): Observable<any> { //TODO
-    return this.http.delete(this.endpoint + 'przejazd/' + ride, this.httpOptions)
+  delRide(ride: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'przejazd/' + ride.id, this.httpOptions)
       .pipe(
-        catchError(this.handleError('delCol', ride))
+        catchError(this.handleError)
+      );
+  }
+
+  delTariff(tariff: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'cennik/' + tariff.id, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  delTop(top: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'doladowanie_konta/' + top.id, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  delWork(work: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'prace_techniczne/' + work.id, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  delWorker(work: any): Observable<any> {
+    return this.http.delete(this.endpoint + 'pracownik/' + work.id, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
       );
   }
 
@@ -143,14 +300,19 @@ export class ApiService {
   }
 
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error('ERROR  ', operation, error); // log to console instead
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      alert(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    // return an observable with a user-facing error message
+    return throwError(
+      'Something bad happened; please try again later.');
   };
 }

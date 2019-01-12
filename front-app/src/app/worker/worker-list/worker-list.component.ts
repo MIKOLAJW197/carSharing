@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {forkJoin} from "rxjs/internal/observable/forkJoin";
+import {Base} from "../../base/base-list/base-list.component";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Worker {
   id: number;
@@ -19,22 +22,34 @@ export interface Worker {
 export class WorkerListComponent implements OnInit {
 
   data: Worker[];
+  bases: Base[];
 
-  constructor(private api: ApiService,
-              private router: Router) {
+  constructor(private apiService: ApiService,
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
   ngOnInit() {
-    this.api.getAllWorkers().subscribe(resp => {
-      this.data = resp;
-      this.sortedData = this.data.slice();
-    });
+
+    forkJoin(
+      this.apiService.getAllWorkers(),
+      this.apiService.getAllBases()
+    )
+      .subscribe(([res2, res3]) => {
+        this.data = res2;
+        this.sortedData = this.data.slice();
+        this.bases = res3;
+      });
   }
 
   onEditClick(worker: Worker) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/workers-edit']);
+    this.routeWithData.navigateWithRouteData(worker,['/workers-edit']);
+  }
+
+  getBaseName(id: number){
+    return this.bases.filter(value => value.id === id).map(value => value.lokalizacja);
   }
 
   sortedData: Worker[];

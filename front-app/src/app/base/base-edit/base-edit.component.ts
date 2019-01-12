@@ -15,7 +15,7 @@ export class BaseEditComponent implements OnInit {
   baseForm: FormGroup;
   base: Base;
 
-  constructor(private api: ApiService,
+  constructor(private apiService: ApiService,
               private router: Router,
               private routeWithData: RouteWithDataService) {
   }
@@ -28,13 +28,19 @@ export class BaseEditComponent implements OnInit {
 
 
   onSubmit() {
-
+    const base = {
+      id: this.base.id,
+      lokalizacja: this.baseForm.get('lokalizacja').value,
+      liczba_miejsc: this.baseForm.get('liczbaMiejsc').value,
+    };
+    // console.log(user);
+    this.apiService.updateBase(base).subscribe(resp => this.router.navigate(['/base']));
   }
 
   onDeleteClick() {
     if (window.confirm('Are sure you want to delete this item ?')) {
-      //put your delete method logic here
-      // this.apiservice.delete
+      this.apiService.delBase(this.base).subscribe(
+        resp => this.router.navigate(['/base']));
     }
   }
 

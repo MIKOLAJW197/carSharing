@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-parking-add',
@@ -10,7 +12,8 @@ export class ParkingAddComponent implements OnInit {
 
   parkingForm: FormGroup;
 
-  constructor() {
+  constructor(private apiService: ApiService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -18,14 +21,12 @@ export class ParkingAddComponent implements OnInit {
   }
 
   onSubmit() {
-    // const text = this.textForm.get('text').value;
-    // this.orginalString=text;
-    // const transformation = this.transformationList.map(el => el.key).join(',');
-    // const request = AppComponent.toNewRequest(text, transformation);
-    // this.apiService.getTransformedText(request).subscribe(resp => {
-    //   this.transformedString=resp.transformed
-    //   this.openAddFileDialog();
-    // });
+    const parking = {
+      lokalizacja: this.parkingForm.get('lokalizacja').value,
+      liczba_miejsc: this.parkingForm.get('liczbaMiejsc').value,
+    };
+    // console.log(user);
+    this.apiService.addParking(parking).subscribe(resp => this.router.navigate(['/parking']));
   }
 
   private initForm() {

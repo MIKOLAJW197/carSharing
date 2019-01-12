@@ -25,17 +25,27 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="uzytkownikMail" [formControlName]="'uzytkownikMail'" type="text">
+      <mat-select placeholder="uzytkownikMail" [formControlName]="'uzytkownikMail'">
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{user.mail}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="picker3" [formControlName]="'cennikOdKiedy'" placeholder="Wybierz date obowiazywania cennika">
-      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-      <mat-datepicker #picker3></mat-datepicker>
+      <mat-select placeholder="Wybierz date obowiazywania cennika" [formControlName]="'cennikOdKiedy'">
+        <mat-option *ngFor="let tariff of tariffs" [value]="tariff.id">
+          {{tariff.od_kiedy}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="samochodNrRejestracyjny" [formControlName]="'samochodNrRejestracyjny'" type="text">
+      <mat-select placeholder="samochodNrRejestracyjny" [formControlName]="'samochodNrRejestracyjny'">
+        <mat-option *ngFor="let car of cars" [value]="car.id">
+          {{car.nr_rejestracyjny}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
   </div>

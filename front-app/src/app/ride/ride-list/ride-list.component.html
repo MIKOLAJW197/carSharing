@@ -18,9 +18,9 @@
       <td>{{ride.dytans}}</td>
       <td>{{ride.lokalizacja_poczatkowa}}</td>
       <td>{{ride.lokalizacja_koncowa}}</td>
-      <td>{{ride.uzytkownik_id}}</td>
-      <td>{{ride.cennik_id}}</td>
-      <td>{{ride.samochod_id}}</td>
+      <td>{{getUserName(ride.uzytkownik_id)}}</td>
+      <td>{{getTariffDate(ride.cennik_id)}}</td>
+      <td>{{getCarName(ride.samochod_id)}}</td>
     </tr>
   </table>
 </mat-card>

@@ -14,14 +14,22 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-
     <mat-form-field>
-      <input matInput placeholder="Przejazd id" [formControlName]="'przejazd'" type="number">
+      <mat-select placeholder="Przejazd user car" [formControlName]="'przejazd'">
+        <mat-option *ngFor="let ride of rides" [value]="ride.id">
+          {{getRideInfo(ride.id)}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder=" ID PRACOWNIKA" [formControlName]="'prac_id'" type="number">
+      <mat-select placeholder="Pracownik" [formControlName]="'prac_id'">
+        <mat-option *ngFor="let worker of workers" [value]="worker.id">
+          {{worker.imie}} &nbsp; {{worker.nazwisko}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+
 
   </div>
 </form>

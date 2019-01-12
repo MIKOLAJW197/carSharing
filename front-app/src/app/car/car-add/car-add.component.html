@@ -26,12 +26,21 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'" type="text">
+      <mat-select placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'">
+        <mat-option *ngFor="let base of bases" [value]="base.id">
+          {{base.lokalizacja}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="parkingLokalizacja" [formControlName]="'parkingLokalizacja'" type="text">
+      <mat-select placeholder="parkingLokalizacja" [formControlName]="'parkingLokalizacja'">
+        <mat-option *ngFor="let parking of parkings" [value]="parking.id">
+          {{parking.lokalizacja}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+
   </div>
 </form>
 

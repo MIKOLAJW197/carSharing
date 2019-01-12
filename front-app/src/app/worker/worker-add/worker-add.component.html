@@ -14,8 +14,13 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'" type="text">
+      <mat-select placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'">
+        <mat-option *ngFor="let base of bases" [value]="base.id">
+          {{base.lokalizacja}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+
   </div>
 </form>
 

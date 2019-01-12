@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Collision} from "../../collision/collision-list/collision-list.component";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {forkJoin} from "rxjs/internal/observable/forkJoin";
+import {Car} from "../../car/car-list/car-list.component";
+import {Base} from "../../base/base-list/base-list.component";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Work {
   id: number;
@@ -20,22 +24,42 @@ export interface Work {
 })
 export class WorkListComponent implements OnInit {
   data: Work[];
+  cars: Car[];
+  bases: Base[];
 
-  constructor(private api: ApiService,
-              private router: Router) {
+  constructor(private apiService: ApiService,
+              private router: Router,
+              private routeWithDataService: RouteWithDataService) {
     this.data = [];
   }
 
   ngOnInit() {
-    this.api.getAllTechnicalWorks().subscribe(resp => {
-      this.data = resp;
-      this.sortedData = this.data.slice();
-    });
+    forkJoin(
+      this.apiService.getAllTechnicalWorks(),
+      this.apiService.getAllCars(),
+      this.apiService.getAllBases()
+    )
+      .subscribe(([res1, res2, res3]) => {
+        this.data = res1;
+        this.sortedData = this.data.slice();
+        this.cars = res2;
+        this.bases = res3;
+        // console.log(this.bases);
+      });
+
   }
 
   onEditClick(collision: Collision) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/tech-edit']);
+    this.routeWithDataService.navigateWithRouteData(collision,['/tech-edit']);
+  }
+
+  getCar(id: number) {
+    return this.cars.filter(value => value.id === id).map(value => value.nr_rejestracyjny);
+  }
+
+  getBase(id: number) {
+    return this.bases.filter(value => value.id === id).map(value => value.lokalizacja);
   }
 
   sortedData: Work[];

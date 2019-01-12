@@ -7,7 +7,7 @@
       <th mat-sort-header="id">ID kolizji</th>
       <th mat-sort-header="localization">Lokalizacja</th>
       <th mat-sort-header="date">Data kolizji</th>
-      <th mat-sort-header="ride">Samochod</th>
+      <th mat-sort-header="ride">Uzytkownik - Przejazd - Samochod</th>
       <th mat-sort-header="worker">Pracownik (pesel)</th>
     </tr>
 
@@ -15,8 +15,8 @@
       <td>{{collision.id}}</td>
       <td>{{collision.lokalizacja}}</td>
       <td>{{collision.data}}</td>
-      <td>{{collision.przejazd_id}}</td>
-      <td>{{collision.pracownik_id}}</td>
+      <td>{{getUserNameFromRideID(collision.przejazd_id)}}</td>
+      <td>{{getWorkerName(collision.pracownik_id)}}</td>
     </tr>
   </table>
 </mat-card>

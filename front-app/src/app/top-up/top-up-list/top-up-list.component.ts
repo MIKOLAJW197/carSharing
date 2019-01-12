@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
+import {User} from "../../user/user-list/user-list.component";
 
 export interface TopUp {
   id: number;
@@ -18,22 +20,29 @@ export interface TopUp {
 })
 export class TopUpListComponent implements OnInit {
   data: TopUp[];
+  users: User[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private  routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
   ngOnInit() {
+    this.api.getAllUsers().subscribe(resp => this.users = resp);
     this.api.getAllTopUps().subscribe(resp => {
       this.data = resp;
       this.sortedData = this.data.slice();
     });
   }
 
+  getUserName(id: number) {
+    return this.users.filter(value => value.id === id).map(value => value.mail);
+  }
+
   onEditClick(topUp: TopUp) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/top-up-edit']);
+    this.routeWithData.navigateWithRouteData(topUp, ['/top-up-edit'])
   }
 
   sortedData: TopUp[];

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-base-add',
@@ -10,21 +12,21 @@ export class BaseAddComponent implements OnInit {
 
   baseForm: FormGroup;
 
-  constructor() { }
+  constructor(private apiService: ApiService,
+              private router: Router) {
+  }
 
   ngOnInit() {
     this.initForm();
   }
 
   onSubmit() {
-    // const text = this.textForm.get('text').value;
-    // this.orginalString=text;
-    // const transformation = this.transformationList.map(el => el.key).join(',');
-    // const request = AppComponent.toNewRequest(text, transformation);
-    // this.apiService.getTransformedText(request).subscribe(resp => {
-    //   this.transformedString=resp.transformed
-    //   this.openAddFileDialog();
-    // });
+    const base = {
+      lokalizacja: this.baseForm.get('lokalizacja').value,
+      liczba_miejsc: this.baseForm.get('liczbaMiejsc').value,
+    };
+    // console.log(user);
+    this.apiService.addBase(base).subscribe(resp => this.router.navigate(['/base']));
   }
 
   private initForm() {

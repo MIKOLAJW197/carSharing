@@ -3,6 +3,10 @@ import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 import {RouteWithDataService} from "../../route-with-data.service";
+import {User} from "../../user/user-list/user-list.component";
+import {Tariff} from "../../tariff/tariff-list/tariff-list.component";
+import {Car} from "../../car/car-list/car-list.component";
+import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 export interface Ride {
   id: number;
@@ -23,6 +27,9 @@ export interface Ride {
 })
 export class RideListComponent implements OnInit {
   data: Ride[];
+  users: User[];
+  tariffs: Tariff[];
+  cars: Car[];
 
   constructor(private api: ApiService,
               private router: Router,
@@ -31,16 +38,39 @@ export class RideListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.api.getAllRides().subscribe(resp => {
-      this.data = resp;
-      this.sortedData = this.data.slice();
-    });
+
+    forkJoin(
+      this.api.getAllRides(),
+      this.api.getAllUsers(),
+      this.api.getAllTariffs(),
+      this.api.getAllCars()
+    )
+      .subscribe(([res1, res2, res3, res4]) => {
+        this.data = res1;
+        this.sortedData = this.data.slice();
+        this.users = res2;
+        this.tariffs = res3;
+        this.cars = res4;
+      });
+
   }
 
   onEditClick(ride: Ride) {
     // todo przekierowywanie z id lub z z danymi z formatki
     // this.router.navigate(['/ride-edit']);
     this.routeWithData.navigateWithRouteData(ride, ['/ride-edit']);
+  }
+
+  getUserName(id: number) {
+    return this.users.filter(value => value.id === id).map(value => value.mail);
+  }
+
+  getTariffDate(id: number) {
+    return this.tariffs.filter(value => value.id === id).map(value => value.od_kiedy);
+  }
+
+  getCarName(id: number) {
+    return this.cars.filter(value => value.id === id).map(value => value.nr_rejestracyjny);
   }
 
   sortedData: Ride[];

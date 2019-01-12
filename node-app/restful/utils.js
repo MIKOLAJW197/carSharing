@@ -30,7 +30,7 @@ function parseQuery(params){
   var rtn = {
     pager:{
       page: 1,
-      pageSize: 10,
+      pageSize: 50,
     },
     sort:{},
     where: {},

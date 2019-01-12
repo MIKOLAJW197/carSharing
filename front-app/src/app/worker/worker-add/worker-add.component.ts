@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {Base} from "../../base/base-list/base-list.component";
+import {RouteWithDataService} from "../../route-with-data.service";
+import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-worker-add',
@@ -10,23 +14,26 @@ export class WorkerAddComponent implements OnInit {
 
 
   workerForm: FormGroup;
+  bases: Base[];
 
-  constructor() {
+  constructor(private apiService: ApiService,
+              private router: Router,
+              private routeWithDataService: RouteWithDataService) {
   }
 
   ngOnInit() {
     this.initForm();
+    this.apiService.getAllBases().subscribe(resp => this.bases = resp);
   }
 
   onSubmit() {
-    // const text = this.textForm.get('text').value;
-    // this.orginalString=text;
-    // const transformation = this.transformationList.map(el => el.key).join(',');
-    // const request = AppComponent.toNewRequest(text, transformation);
-    // this.apiService.getTransformedText(request).subscribe(resp => {
-    //   this.transformedString=resp.transformed
-    //   this.openAddFileDialog();
-    // });
+    let worker = {
+      pesel: this.workerForm.get('pesel').value,
+      imie: this.workerForm.get('imie').value,
+      nazwisko: this.workerForm.get('nazwisko').value,
+      baza_id: this.workerForm.get('bazaLokalizacja').value
+    };
+    this.apiService.addWorker(worker).subscribe(resp => this.router.navigate(['/workers']));
   }
 
   private initForm() {

@@ -1,3 +1,28 @@
-<p>
-  worker-edit works!
-</p>
+<form [formGroup]="workerForm">
+  <div class="example-container">
+
+    <mat-form-field>
+      <input matInput placeholder="pesel" [formControlName]="'pesel'" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="imie" [formControlName]="'imie'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nazwisko" [formControlName]="'nazwisko'" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="bazaLokalizacja" [formControlName]="'bazaLokalizacja'">
+        <mat-option *ngFor="let base of bases" [value]="base.id">
+          {{base.lokalizacja}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</form>
+
+<button mat-button color="primary" (click)="onSubmit()">Edytuj</button>
+<button mat-button color="red" (click)="onDeleteClick()">USUŃ</button>

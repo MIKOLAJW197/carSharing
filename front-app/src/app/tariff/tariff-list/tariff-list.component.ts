@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
+import {RouteWithDataService} from "../../route-with-data.service";
 
 export interface Tariff {
   id: number;
@@ -20,7 +21,8 @@ export class TariffListComponent implements OnInit {
   data: Tariff[];
 
   constructor(private api: ApiService,
-              private router: Router) {
+              private router: Router,
+              private routeWithData: RouteWithDataService) {
     this.data = [];
   }
 
@@ -33,7 +35,7 @@ export class TariffListComponent implements OnInit {
 
   onEditClick(tariff: Tariff) {
     // todo przekierowywanie z id lub z z danymi z formatki
-    this.router.navigate(['/tariff-edit']);
+    this.routeWithData.navigateWithRouteData(tariff,['/tariff-edit']);
   }
 
   sortedData: Tariff[];

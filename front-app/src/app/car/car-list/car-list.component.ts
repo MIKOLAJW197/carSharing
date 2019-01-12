@@ -3,6 +3,8 @@ import {ApiService} from "../../api/api.service";
 import {Router} from "@angular/router";
 import {Sort} from "@angular/material";
 import {RouteWithDataService} from "../../route-with-data.service";
+import {Parking} from "../../parking/parking-list/parking-list.component";
+import {Base} from "../../base/base-list/base-list.component";
 
 export interface Car {
   id: number;
@@ -23,6 +25,8 @@ export interface Car {
 })
 export class CarListComponent implements OnInit {
   data: Car[];
+  parkings: Parking[];
+  bases: Base[];
 
   constructor(private api: ApiService,
               private router: Router,
@@ -31,10 +35,20 @@ export class CarListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.api.getAllParkings().subscribe(resp => this.parkings = resp);
+    this.api.getAllBases().subscribe(resp => this.bases = resp);
     this.api.getAllCars().subscribe(resp => {
       this.data = resp;
       this.sortedData = this.data.slice();
     });
+  }
+
+  getParkingName(id: number) {
+    return this.parkings.filter(value => value.id === id).map(value => value.lokalizacja);
+  }
+
+  getBaseName(id: number) {
+    return this.bases.filter(value => value.id === id).map(value => value.lokalizacja);
   }
 
   onEditClick(car: Car) {

@@ -8,7 +8,7 @@
       <th mat-sort-header="company">Siec Stacji</th>
       <th mat-sort-header="amount">Litry</th>
       <th mat-sort-header="price">Kwota</th>
-      <th mat-sort-header="ride">Przejazd</th>
+      <th mat-sort-header="ride">Uzytkownik - Przejazd - Samochod</th>
     </tr>
 
     <tr class="clickable" *ngFor="let refuel of sortedData" (click)="onEditClick(refuel)">
@@ -16,7 +16,7 @@
       <td>{{refuel.siec_stacji}}</td>
       <td>{{refuel.ile_litrow}}</td>
       <td>{{refuel.kwota}}</td>
-      <td>{{refuel.przejazd_id}}</td>
+      <td>{{getRideInfo(refuel.przejazd_id)}}</td>
     </tr>
   </table>
 </mat-card>

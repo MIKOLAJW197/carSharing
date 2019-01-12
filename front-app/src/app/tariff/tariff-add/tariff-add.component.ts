@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {ApiService} from "../../api/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tariff-add',
@@ -10,7 +12,8 @@ export class TariffAddComponent implements OnInit {
 
   tariffForm: FormGroup;
 
-  constructor() {
+  constructor(private apiService: ApiService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -18,14 +21,14 @@ export class TariffAddComponent implements OnInit {
   }
 
   onSubmit() {
-    // const text = this.textForm.get('text').value;
-    // this.orginalString=text;
-    // const transformation = this.transformationList.map(el => el.key).join(',');
-    // const request = AppComponent.toNewRequest(text, transformation);
-    // this.apiService.getTransformedText(request).subscribe(resp => {
-    //   this.transformedString=resp.transformed
-    //   this.openAddFileDialog();
-    // });
+    const tariff = {
+      od_kiedy: this.tariffForm.get('odKiedy').value,
+      do_kiedy: this.tariffForm.get('doKiedy').value,
+      cena_kilometra: this.tariffForm.get('cenaKilometra').value,
+      cena_minuty: this.tariffForm.get('cenaMinuty').value,
+    };
+    // console.log(user);
+    this.apiService.addTariff(tariff).subscribe(resp => this.router.navigate(['/tariff']));
   }
 
   private initForm() {

@@ -27,21 +27,19 @@ export class ParkingEditComponent implements OnInit {
   }
 
   onSubmit() {
-    // const user = {
-    //   mail: this.parkingForm.get('mail').value,
-    //   haslo: this.parkingForm.get('haslo').value,
-    //   imie: this.parkingForm.get('imie').value,
-    //   nazwisko: this.parkingForm.get('nazwisko').value,
-    //   pesel: this.parkingForm.get('pesel').value,
-    //   stan_skarbonki: this.parkingForm.get('stanSkarbonki').value,
-    // };
-    // this.apiService.updateUser(user).subscribe(resp => this.router.navigate(['/users']));
+    const parking = {
+      id: this.parking.id,
+      lokalizacja: this.parkingForm.get('lokalizacja').value,
+      liczba_miejsc: this.parkingForm.get('liczbaMiejsc').value,
+    };
+    // console.log(user);
+    this.apiService.updateParking(parking).subscribe(resp => this.router.navigate(['/parking']));
   }
 
   onDeleteClick() {
     if (window.confirm('Are sure you want to delete this item ?')) {
-      //put your delete method logic here
-      this.apiService.delParking(this.parking).subscribe(resp => this.router.navigate(['/parking']));
+      this.apiService.delParking(this.parking).subscribe(
+        resp => this.router.navigate(['/parking']));
     }
   }
 
