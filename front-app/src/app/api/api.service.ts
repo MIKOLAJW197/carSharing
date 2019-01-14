@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   getAllTopUpsForID(id: number): Observable<any> {
-    return this.http.get(this.endpoint + 'doladowanie_konta?id=' + id);
+    return this.http.get(this.endpoint + 'suma_doladowan/' + id);
   }
 
   topUpAllUsers(value: number): Observable<any> {

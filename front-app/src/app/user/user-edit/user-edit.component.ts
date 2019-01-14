@@ -49,7 +49,7 @@ export class UserEditComponent implements OnInit {
   }
 
   onAllTopUpClick(){
-    this.apiService.getAllTopUpsForID(this.user.id).subscribe(resp => alert(resp));
+    this.apiService.getAllTopUpsForID(this.user.id).subscribe(resp => alert(resp.slice(2,resp.indexOf(']'))));
   }
 
   private initForm() {
