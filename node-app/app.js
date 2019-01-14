@@ -16,6 +16,8 @@ app.use('/przejazd',require('./restful/routers/przejazd'))
 app.use('/samochod',require('./restful/routers/samochod'))
 app.use('/tankowanie',require('./restful/routers/tankowanie'))
 app.use('/uzytkownik',require('./restful/routers/uzytkownik'))
+app.use('/suma_doladowan',require('./restful/routers/suma_doladowan'))
+app.use('/doladuj_wszystkim',require('./restful/routers/doladuj_wszystkim'))
 
 app.get('/', function(req, res) {
   res.send('CarSharing API is live!');
