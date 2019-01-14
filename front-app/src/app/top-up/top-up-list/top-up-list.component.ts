@@ -21,6 +21,7 @@ export interface TopUp {
 export class TopUpListComponent implements OnInit {
   data: TopUp[];
   users: User[];
+  value: number;
 
   constructor(private api: ApiService,
               private router: Router,
@@ -43,6 +44,12 @@ export class TopUpListComponent implements OnInit {
   onEditClick(topUp: TopUp) {
     // todo przekierowywanie z id lub z z danymi z formatki
     this.routeWithData.navigateWithRouteData(topUp, ['/top-up-edit'])
+  }
+
+  onKey(event) {this.value = event.target.value;}
+
+  onSubmit() {
+    this.api.topUpAllUsers(this.value).subscribe(resp => this.router.navigate(['/users']));
   }
 
   sortedData: TopUp[];

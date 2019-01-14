@@ -48,6 +48,10 @@ export class UserEditComponent implements OnInit {
       }
   }
 
+  onAllTopUpClick(){
+    this.apiService.getAllTopUpsForID(this.user.id).subscribe(resp => alert(resp));
+  }
+
   private initForm() {
     this.userForm = new FormGroup({
       mail: new FormControl(),

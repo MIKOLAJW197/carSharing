@@ -1,6 +1,12 @@
 <mat-card>
   <mat-card-title>Top Ups List
-    <button mat-fab color="primary" [routerLink]="['/top-up-add']">+</button>
+    <button mat-fab color="primary" [routerLink]="['/top-up-add']">+</button> &nbsp;
+    <form>
+      <mat-form-field>
+        <input matInput (keyup)="onKey($event)" placeholder="Kwota doladowania" type="number">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="onSubmit()">Doładuj wszystkim</button>
+    </form>
   </mat-card-title>
   <table matSort (matSortChange)="sortData($event)">
     <tr>

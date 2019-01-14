@@ -22,6 +22,14 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
+  getAllTopUpsForID(id: number): Observable<any> {
+    return this.http.get(this.endpoint + 'doladowanie_konta?id=' + id);
+  }
+
+  topUpAllUsers(value: number): Observable<any> {
+    return this.http.get(this.endpoint + 'doladuj_wszystkim/' + value );
+  }
+
   getAllCars(): Observable<any> {
     return this.http.get(this.endpoint + 'samochod');
   }
