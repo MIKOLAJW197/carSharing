@@ -8,7 +8,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput [matDatepicker]="picker2" [formControlName]="'doKiedy'" placeholder="Wybierz date zakonczenia obowiazywania">
+      <input matInput [matDatepicker]="picker2" [min]="tariffForm.controls.odKiedy.value"  [formControlName]="'doKiedy'" placeholder="Wybierz date zakonczenia obowiazywania">
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
