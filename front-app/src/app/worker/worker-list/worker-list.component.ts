@@ -23,6 +23,8 @@ export class WorkerListComponent implements OnInit {
 
   data: Worker[];
   bases: Base[];
+  public searchString: string;
+
 
   constructor(private apiService: ApiService,
               private router: Router,

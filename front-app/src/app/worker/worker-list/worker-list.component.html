@@ -2,6 +2,11 @@
   <mat-card-title>Workers List
     <button mat-fab color="primary" [routerLink]="['/workers-add']">+</button>
   </mat-card-title>
+
+  <mat-form-field>
+    <input matInput  name="searchString" placeholder="Type to search by pesel..." [(ngModel)]="searchString">
+  </mat-form-field>
+
   <table matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="id">id</th>
@@ -11,7 +16,7 @@
       <th mat-sort-header="baza">Baza pracownika</th>
     </tr>
 
-    <tr class="clickable" *ngFor="let worker of sortedData" (click)="onEditClick(worker)">
+    <tr class="clickable" *ngFor="let worker of sortedData| filter : 'pesel' : searchString" (click)="onEditClick(worker)">
       <td>{{worker.id}}</td>
       <td>{{worker.pesel}}</td>
       <td>{{worker.imie}}</td>

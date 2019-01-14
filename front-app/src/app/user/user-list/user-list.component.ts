@@ -24,6 +24,7 @@ export class UserListComponent implements OnInit {
 
   data: User[];
   showPassword: boolean;
+  public searchString: string;
 
   constructor(private api: ApiService,
               private router: Router,

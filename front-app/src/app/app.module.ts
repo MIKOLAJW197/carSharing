@@ -66,6 +66,7 @@ import {RefuelAddComponent} from './refuel/refuel-add/refuel-add.component';
 import {RefuelEditComponent} from './refuel/refuel-edit/refuel-edit.component';
 import {RefuelListComponent} from './refuel/refuel-list/refuel-list.component';
 import {CommonModule} from "@angular/common";
+import {FilterPipe} from "./shared/filterPipe";
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import {CommonModule} from "@angular/common";
     RefuelComponent,
     RefuelAddComponent,
     RefuelEditComponent,
-    RefuelListComponent
+    RefuelListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

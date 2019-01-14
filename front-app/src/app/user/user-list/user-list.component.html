@@ -2,6 +2,12 @@
   <mat-card-title>Users List
     <button mat-fab color="primary" [routerLink]="['/user-add']">+</button>
   </mat-card-title>
+
+  <mat-form-field>
+    <input matInput  name="searchString" placeholder="Type to search by mail..." [(ngModel)]="searchString">
+  </mat-form-field>
+
+
   <table matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="mail">Mail</th>
@@ -12,7 +18,7 @@
       <th mat-sort-header="konto">Stan Konta</th>
     </tr>
 
-    <tr class="clickable" *ngFor="let user of sortedData" (click)="onEditClick(user)">
+    <tr class="clickable" *ngFor="let user of sortedData | filter : 'mail' : searchString" (click)="onEditClick(user)">
       <td>{{user.mail}}</td>
       <td (mouseover)="showPassword=true" (mouseout)="showPassword=false">
         <span *ngIf="!showPassword">*******</span>

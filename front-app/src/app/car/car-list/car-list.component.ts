@@ -27,6 +27,7 @@ export class CarListComponent implements OnInit {
   data: Car[];
   parkings: Parking[];
   bases: Base[];
+  public searchString: string;
 
   constructor(private api: ApiService,
               private router: Router,

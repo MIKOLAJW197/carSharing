@@ -1,5 +1,10 @@
 <mat-card>
   <mat-card-title>Cars List <button mat-fab color="primary" [routerLink]="['/car-add']">+</button></mat-card-title>
+
+  <mat-form-field>
+    <input matInput  name="searchString" placeholder="Type to search by nrRejestracyjny..." [(ngModel)]="searchString">
+  </mat-form-field>
+
   <table matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="NrRejestracyjny">NrRejestracyjny</th>
@@ -12,7 +17,7 @@
       <th mat-sort-header="parking">Parking</th>
     </tr>
 
-    <tr class="clickable" *ngFor="let car of sortedData" (click)="onEditClick(car)">
+    <tr class="clickable" *ngFor="let car of sortedData| filter : 'nr_rejestracyjny' : searchString" (click)="onEditClick(car)">
       <td>{{car.nr_rejestracyjny}}</td>
       <td><mat-icon color="primary" [innerHTML]="car.dostepny === '1' ? 'done' : 'clear'"></mat-icon></td>
       <td>{{car.model}}</td>
