@@ -6,7 +6,7 @@
       "port": "3306",
       "user": "carsharing",
       "password": "bombelek",
-      "database": "carsharing",
+      "database": "projekt",
       "charset": "utf8",
       "supportBigNumbers": true,
       "bigNumberStrings": true
