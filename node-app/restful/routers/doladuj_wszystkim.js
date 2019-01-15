@@ -8,9 +8,10 @@ var Bookshelf = require('../bookshelf')
 router.use(bodyParser.json())
 
 router.get('/:id',(req,res,next)=>{
-  Bookshelf.knex.raw('CALL doladuj_wszystkim(' + req.params.id + ')')
-  res.send('done')
+  Bookshelf.knex.raw('CALL `doladuj_wszystkim`(' + req.params.id + ')')
+  .then((rows) => {
+  res.json(JSON.stringify(rows))
 })
-
+})
 
 module.exports = router
