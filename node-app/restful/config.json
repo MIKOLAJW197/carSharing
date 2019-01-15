@@ -5,8 +5,8 @@
       "host": "laganowski.com",
       "port": "3306",
       "user": "carsharing",
-      "password": "bombelek",
-      "database": "projekt",
+      "password": "projekt",
+      "database": "carsharing",
       "charset": "utf8",
       "supportBigNumbers": true,
       "bigNumberStrings": true
